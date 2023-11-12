@@ -1,3 +1,4 @@
+import Persona
 class Estudiante(Persona):
     estudiantes_registrados = []
 

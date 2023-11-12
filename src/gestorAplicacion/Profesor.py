@@ -1,4 +1,5 @@
 import pickle
+import Persona
 
 class Profesor(Persona):
     profesores_con_lau = []

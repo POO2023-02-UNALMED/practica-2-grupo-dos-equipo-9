@@ -11,49 +11,37 @@ class Grupo:
         self._estudiantes = []
         Grupo._gruposTotales.append(self)
 
-    def mostrarInformacionGrupo(self):
+    def mostrar_informacion_grupo(self):
         return "Número del grupo: {}, Profesor: {}, Horario: {}, Cupos: {}, Salón: {}".format(
-            self.numero, self.profesor, self.horario, self.cupos, self.salon
+            self._numero, self._profesor, self._horario, self._cupos, self._salon
         )
 
-    def existenciaEstudiante(self, estudiante):
-        for e in self._estudiantes:
-            if e.getId() == estudiante.getId():
-                return True
-        return False
+    def existencia_estudiante(self, estudiante):
+        return any(e.getId() == estudiante.getId() for e in self._estudiantes)
 
-    def eliminarEstudiante(self, estudiante):
-        indice = -1
+    def eliminar_estudiante(self, estudiante):
         for i, e in enumerate(self._estudiantes):
             if e.getNombre() == estudiante.getNombre():
-                indice = i
                 self._cupos += 1
-                estudiante.eliminarGrupo(self)
+                estudiante.eliminar_grupo(self)
+                self._estudiantes.pop(i)
                 break
-        if indice != -1:
-            self._estudiantes.pop(indice)
 
+            
     @staticmethod
-    def buscarGrupo(materiaE, grupoE):
+    def buscar_grupo(materia_e, grupo_e):
         from gestorAplicacion.administracion.Materia import Materia
         
-        indicei = -1
-        indicej = -1
-        for i in range(len(Materia.getMateriasTotales())):
-            materia = Materia.getMateriasTotales()[i]
-            if materia.getNombre() == materiaE.getNombre():
-                indicei = i
-                for j in range(len(materia.getGrupos())):
-                    grupo = materia.getGrupos()[j]
-                    if grupo.getNumero() == grupoE.getNumero():
-                        indicej = j
-                        break
+        for materia in Materia.getMateriasTotales():
+            if materia.getNombre() == materia_e.getNombre():
+                for grupo in materia.getGrupos():
+                    if grupo.getNumero() == grupo_e.getNumero():
+                        return grupo
 
-        return Materia.getMateriasTotales()[indicei].getGrupos()[indicej]
-
-    def agregarEstudiante(self, estudiante):
+    def agregar_estudiante(self, estudiante):
         self._estudiantes.append(estudiante)
         self._cupos -= 1
+
 
     def getNumero(self):
         return self._numero

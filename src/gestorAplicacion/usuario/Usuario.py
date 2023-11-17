@@ -53,4 +53,37 @@ class Usuario(ABC):
 
     def getTipo(self):
         return self._tipo
-    
+    def setTipo(self, tipo):
+        self._tipo = tipo
+
+    def getId(self):
+        return self._id
+
+    def setId(self, id):
+        self._id = id
+
+    def getNombre(self):
+        return self._nombre
+
+    def setNombre(self, nombre):
+        self._nombre = nombre
+
+    def getPw(self):
+        return self._pw
+
+    def setPw(self, pw):
+        self._pw = pw
+
+    def getFacultad(self):
+        return self._facultad
+
+    def setFacultad(self, facultad):
+        self._facultad = facultad
+
+    @classmethod
+    def getUsuariosTotales(cls):
+        return cls._usuariosTotales
+
+    @classmethod
+    def setUsuariosTotales(cls, usuariosTotales):
+        cls._usuariosTotales = usuariosTotales

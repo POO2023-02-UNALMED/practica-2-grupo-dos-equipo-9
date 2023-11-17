@@ -145,3 +145,100 @@ class Estudiante(Usuario):
         num = len(gruposEliminar)
         for i in range(num):
             gruposEliminar[i].eliminarEstudiante(self)
+# Getters y setters
+    def getPrograma(self):
+        return self._programa
+
+    def setPrograma(self, programa):
+        self._programa = programa
+
+    def getSemestre(self):
+        return self._semestre
+
+    def setSemestre(self, semestre):
+        self._semestre = semestre
+
+    def getCreditos(self):
+        return self._creditos
+
+    def setCreditos(self, creditos):
+        self._creditos = creditos
+
+    def getMaterias(self):
+        return self._materias
+
+    def setMaterias(self, materias):
+        self._materias = materias
+
+    def getGrupos(self):
+        return self._grupos
+
+    def setGrupos(self, grupos):
+        self._grupos = grupos
+
+    def getHorario(self):
+        return self._horario
+
+    def setHorario(self, horario):
+        self._horario = horario
+
+    @classmethod
+    def getEstudiantes(cls):
+        return cls._estudiantes
+
+    @classmethod
+    def setEstudiantes(cls, estudiantes):
+        cls._estudiantes = estudiantes
+
+    def getEstrato(self):
+        return self._estrato
+
+    def setEstrato(self, estrato):
+        self._estrato = estrato
+
+    def getSueldo(self):
+        return self._sueldo
+
+    def setSueldo(self, sueldo):
+        self._sueldo = sueldo
+
+    def getValorMatricula(self):
+        return self._valorMatricula
+
+    def isMatriculaPagada(self):
+        return self._matriculaPagada
+
+    def getPromedio(self):
+        return self._promedio
+
+    def setPromedio(self, promedio):
+        self._promedio = promedio
+
+    def getAvance(self):
+        return self._avance
+
+    def setAvance(self, avance):
+        self._avance = avance
+
+    def getCreditosParaGraduarse(self):
+        return self._CREDITOS_PARA_GRADURASE
+
+    def getBeca(self):
+        return self._beca
+
+    def setBeca(self, beca):
+        self._beca = beca
+
+    def getNotas(self):
+        return self._notas
+
+    def setNotas(self, notas):
+        self._notas = notas
+
+
+    def getGruposVistos(self):
+        return self._gruposVistos
+
+
+    def setGruposVistos(self, gruposVistos):
+        self._gruposVistos = gruposVistos

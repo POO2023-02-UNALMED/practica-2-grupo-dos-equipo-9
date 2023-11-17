@@ -59,3 +59,89 @@ class Estudiante(Usuario):
             ):
                 return i
         return -1
+    
+    def eliminarMateria(self, materia):
+        # print(self.getNombre())
+        # print(Estudiante.getEstudiantes()[0].getNombre())
+        # print(len(Estudiante.getEstudiantes()[0].getMaterias()))
+        indice = None
+        # print(self.getMaterias())
+        for i in range(len(self.getMaterias())):
+            if (self._materias[i]).getNombre() == materia.getNombre():
+                indice = i
+
+        self._materias.pop(indice)
+        self._creditos -= materia.creditos
+
+    def eliminarGrupo(self, grupo):
+        indice = None
+        for i in range(len(self._grupos)):
+            if self._grupos[i].getMateria().getCodigo() == grupo.getMateria().getCodigo():
+                indice = i
+        self._grupos.pop(indice)
+        self.eliminarMateria(grupo.getMateria())
+    
+    def pagarMatricula(self):
+        if self._sueldo >= self._valorMatricula:
+            self._sueldo -= self._valorMatricula
+            self._matriculaPagada = True
+            return True
+        else:
+            self._matriculaPagada = False
+            return False
+
+    def calcularPromedio(self):
+        promedio = 0
+        for nota in self._notas:
+            promedio += nota
+        promedio = promedio / len(self._notas)
+        self._promedio = promedio
+        # self.setPromedio(promedio)
+
+    def calcularAvance(self):
+        creditosVistos = 0
+
+        for pGrupo in self._gruposVistos:
+            creditosVistos += pGrupo.getMateria().getCreditos()
+
+        self.setAvance(
+            (creditosVistos * 100.0) / self.getCreditosParaGraduarse()
+        )
+
+    def agregarNota(self, nota):
+        self._notas.append(nota)
+        self.calcularPromedio()
+
+    @staticmethod
+    def mostrarEstudiantes():
+        estudiantes = ""
+        i = 1
+        for estudiante in Estudiante._estudiantes:
+            estudiantes += f"\n{i}. {estudiante.getNombre()}"
+            i += 1
+        return estudiantes[1:]
+
+    def buscarMateriaPorNombre(self, nombre):
+        for materia in self._materias:
+            if materia.getNombre() == nombre:
+                return materia
+        return None
+
+    def buscarMateriaEnInscritas(self, nombre, codigo):
+        for materia in self._materias:
+            if materia.getNombre() == nombre and materia.getCodigo() == codigo:
+                return True
+        return False
+
+    def desmatricularMaterias(self):
+        # Desmatricula todas las materias de un estudiante
+        gruposEliminar = []
+        # self.setMaterias([])
+        for grupoE in self._grupos:
+            grupo = Grupo.buscarGrupo(grupoE.getMateria(), grupoE)
+            grupo.getMateria().setCupos(grupo.getMateria().getCupos() + 1)
+            self.setCreditos(self.getCreditos() - grupo.getMateria().getCreditos())
+            gruposEliminar.append(grupo)
+        num = len(gruposEliminar)
+        for i in range(num):
+            gruposEliminar[i].eliminarEstudiante(self)

@@ -1,17 +1,7 @@
 class Beca:
     _becas = []
 
-    def __init__(
-        self,
-        cupos,
-        convenio,
-        promedioRequerido,
-        avanceRequerido,
-        estratoMinimo,
-        creditosInscritosRequeridos,
-        ayudaEconomica,
-        necesitaRecomendacion,
-    ):
+    def __init__(self,cupos,convenio,promedioRequerido,avanceRequerido,estratoMinimo,creditosInscritosRequeridos,ayudaEconomica,necesitaRecomendacion,):
         self._cupos = cupos
         self._convenio = convenio
         self._promedioRequerido = promedioRequerido
@@ -25,15 +15,15 @@ class Beca:
     # METODOS
 
     @classmethod
-    def eliminar_beca(cls, beca):
+    def eliminarBeca(cls, beca):
         cls._becas.remove(beca)
     
     @staticmethod
-    def lista_becas():
+    def listaBecas():
         return [beca.get_convenio() for beca in Beca._becas]
     
     @staticmethod
-    def buscando_beca(beca_sel):
+    def buscandoBeca(beca_sel):
         for beca in Beca._becas:
             if beca.get_convenio() == beca_sel:
                 return beca
@@ -90,9 +80,9 @@ class Beca:
         self._necesitaRecomendacion = necesita_recomendacion
 
     @classmethod
-    def get_becas(cls):
+    def getBecas(cls):
         return cls._becas
 
     @classmethod
-    def set_becas(cls, becas):
+    def setBecas(cls, becas):
         cls._becas = becas

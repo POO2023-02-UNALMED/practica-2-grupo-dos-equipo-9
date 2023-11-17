@@ -223,3 +223,63 @@ class Materia:
             cupos+=i.getCupos()
             
         return cupos
+  # GETTERS Y SETTERS
+
+    @classmethod
+    def getMateriasTotales(cls):
+        return cls.materiasTotales
+
+    @classmethod
+    def setMateriasTotales(cls, materias):
+        cls.materiasTotales = materias
+
+    def getDescripcion(self):
+        return self.descripcion
+
+    def setDescripcion(self, descripcion):
+        self.descripcion = descripcion
+
+    def getNombre(self):
+        return self.nombre
+
+    def setNombre(self, nombre):
+        self.nombre = nombre
+
+    def getCodigo(self):
+        return self.codigo
+
+    def getCreditos(self):
+        return self.creditos
+
+    def setCreditos(self, creditos):
+        self.creditos = creditos
+
+    def getFacultad(self):
+        return self.facultad
+
+    def setFacultad(self, facultad):
+        self.facultad = facultad
+
+    def getCupos(self):
+        return self.calcularCupos()
+
+    def setCupos(self, cupos):
+        self.cupos = cupos
+
+    def getPrerrequisitos(self):
+        return self.prerrequisitos
+
+    def setPrerrequisitos(self, prerrequisitos):
+        self.prerrequisitos = prerrequisitos
+
+    def getGrupos(self):
+        return self.grupos
+
+    def setGrupos(self, grupos):
+        self.grupos = grupos
+
+    def getAbreviatura(self):
+        return self.abreviatura
+
+    def setAbreviatura(self, abreviatura):
+        self.abreviatura = abreviatura

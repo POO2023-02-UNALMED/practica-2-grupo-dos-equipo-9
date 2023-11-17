@@ -11,15 +11,15 @@ class Grupo:
         self._estudiantes = []
         Grupo._gruposTotales.append(self)
 
-    def mostrar_informacion_grupo(self):
+    def mostrarInformacionGrupo(self):
         return "Número del grupo: {}, Profesor: {}, Horario: {}, Cupos: {}, Salón: {}".format(
             self._numero, self._profesor, self._horario, self._cupos, self._salon
         )
 
-    def existencia_estudiante(self, estudiante):
+    def existenciaEstudiante(self, estudiante):
         return any(e.getId() == estudiante.getId() for e in self._estudiantes)
 
-    def eliminar_estudiante(self, estudiante):
+    def eliminarEstudiante(self, estudiante):
         for i, e in enumerate(self._estudiantes):
             if e.getNombre() == estudiante.getNombre():
                 self._cupos += 1
@@ -29,7 +29,7 @@ class Grupo:
 
             
     @staticmethod
-    def buscar_grupo(materia_e, grupo_e):
+    def buscarGrupo(materia_e, grupo_e):
         from gestorAplicacion.administracion.Materia import Materia
         
         for materia in Materia.getMateriasTotales():
@@ -38,7 +38,7 @@ class Grupo:
                     if grupo.getNumero() == grupo_e.getNumero():
                         return grupo
 
-    def agregar_estudiante(self, estudiante):
+    def agregarEstudiante(self, estudiante):
         self._estudiantes.append(estudiante)
         self._cupos -= 1
 

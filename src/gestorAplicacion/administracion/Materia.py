@@ -109,3 +109,117 @@ class Materia:
             retorno.append(materia.getNombre())
         return retorno
 
+ # MÉTODOS DE INSTANCIA
+
+    def cantidadCupos(self):
+        cantidad = 0
+        for pGrupo in self.grupos:
+            cantidad += pGrupo.getCupos()
+        return cantidad
+
+    def crearGrupo(self, numero, profesor, horario, cupos, salon):
+        grupo = Grupo(self, numero, profesor, horario, cupos, salon)
+
+        self.cantidadCupos()
+        self.grupos.append(grupo)
+
+        return grupo
+
+    def mostrarContenidos(self):
+        contenido = (
+            "Materia: "
+            + self.nombre
+            + "\n"
+            + "Codigo: "
+            + str(self.codigo)
+            + "\n"
+            + "Creditos: "
+            + str(self.creditos)
+            + "\n"
+            + "Facultad: "
+            + self.facultad
+            + "\n"
+            + "Descripcion:\n"
+            + self.descripcion
+        )
+        return contenido
+
+    def existenciaGrupo(self, grupoBuscado):
+        if self.grupos:
+            for grupo in self.grupos:
+                if grupo == grupoBuscado:
+                    return True
+            return False
+        else:
+            return False
+
+    def eliminarGrupo(self, numero):
+        if numero>0 and numero<=len(self.grupos):
+            grupo = self.grupos[numero - 1]
+            grupo.getProfesor().desvincularGrupo(grupo)
+            grupo.getSalon().getHorario().liberarHorario(grupo.getHorario())
+            self.grupos.remove(grupo)
+            
+            for i in range(numero - 1, len(self.grupos)):
+                grupoCamb = self.grupos[i]
+                nGrupoAnt = grupoCamb.getNumero()
+                grupoCamb.setNumero(nGrupoAnt - 1)
+        else:
+            raise CampoInvalido()
+
+    def agregarGrupo(self, numero, profesor, horario, cupos, salon):
+        dispSalon = True
+        dispProfesor = True
+        daMateria = profesor.daMateria(self.nombre)
+
+        
+        dispProfesor = profesor.getHorario().comprobarDisponibilidad(horario)
+        dispSalon = salon.getHorario().comprobarDisponibilidad(horario)
+
+        if dispProfesor and dispSalon and daMateria:
+            nGrupo = self.crearGrupo(numero, profesor, horario, cupos, salon)
+            salon.getHorario().ocuparHorario(nGrupo, horario)
+            profesor.vincularGrupo(nGrupo)
+        else:
+            raise GrupoNoAgregado()
+
+    def agregarGrupoHecho(self, grupoHecho):
+        self.grupos.append(grupoHecho)
+
+    def buscarGrupoDeEstudiante(self, estudiante):
+        for grupo in self.grupos:
+            for e in grupo.getEstudiantes():
+                if e == estudiante:
+                    return grupo
+        return None
+
+    def hacerAbreviatura(self, nombre):
+        abreviatura = ""
+        if len(nombre) <= 13:
+            self.abreviatura = nombre
+        else:
+            palabras = nombre.split()
+            for palabra in palabras:
+                if len(palabra) >= 3:
+                    abreviatura += palabra[:3] + " "
+                else:
+                    abreviatura += palabra[: len(palabra)] + " "
+            if len(abreviatura) <= 13:
+                self.abreviatura = abreviatura
+            else:
+                self.abreviatura = abreviatura[:13]
+
+    def mostrarGrupos(self):
+        retorno = ""
+        i = 1
+        for grupo in self.grupos:
+            retorno += f"{i}. {grupo.getNumero()}.\n"
+            i += 1
+        return retorno
+    
+    def calcularCupos(self):
+        cupos =0
+        for i in self.grupos:
+            cupos+=i.getCupos()
+            
+        return cupos

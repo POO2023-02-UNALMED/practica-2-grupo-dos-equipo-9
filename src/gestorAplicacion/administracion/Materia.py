@@ -1,21 +1,12 @@
 from gestorAplicacion.administracion.Grupo import Grupo
 from excepciones.ErrorManejo import *
-# from Salon import Salon
+
 
 
 class Materia:
     materiasTotales = []
 
-    def __init__(
-        self,
-        nombre,
-        codigo,
-        descripcion,
-        creditos,
-        facultad,
-        prerrequisitos=None,
-        grupos=None,
-    ):
+    def __init__(self,nombre,codigo,descripcion,creditos,facultad,prerrequisitos=None,grupos=None,):
         self.nombre = nombre
         self.codigo = codigo
         self.descripcion = descripcion

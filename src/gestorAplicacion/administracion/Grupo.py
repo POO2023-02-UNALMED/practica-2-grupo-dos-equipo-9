@@ -1,7 +1,7 @@
 class Grupo:
     _gruposTotales = []
 
-    def __init__(self, materia, numero, profesor, horario=[], cupos=None, salon=None):
+    def __init__(self, materia, numero, profesor, horario=None, cupos=None, salon=None):
         self._materia = materia
         self._numero = numero
         self._profesor = profesor
@@ -57,3 +57,49 @@ class Grupo:
 
     def getNumero(self):
         return self._numero
+    def setNumero(self, numero):
+        self._numero = numero
+
+    def getProfesor(self):
+        return self._profesor
+
+    def setProfesor(self, profesor):
+        self._profesor = profesor
+
+    def getHorario(self):
+        return self._horario
+
+    def setHorario(self, horario):
+        self._horario = horario
+
+    def getCupos(self):
+        return self._cupos
+
+    def setCupos(self, cupos):
+        self._cupos = cupos
+
+    def getSalon(self):
+        return self._salon
+
+    def setSalon(self, salon):
+        self._salon = salon
+
+    def getEstudiantes(self):
+        return self._estudiantes
+
+    def setEstudiantes(self, estudiantes):
+        self._estudiantes = estudiantes
+
+    def getMateria(self):
+        return self._materia
+
+    def setMateria(self, materia):
+        self._materia = materia
+
+    @classmethod
+    def getGruposTotales(cls):
+        return cls._gruposTotales
+
+    @classmethod
+    def setGruposTotales(cls, grupos):
+        cls._gruposTotales = grupos

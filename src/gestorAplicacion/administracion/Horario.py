@@ -60,9 +60,7 @@ class Horario:
             self.liberarHorario(grupo.getHorario())
 
     def comprobarDisponibilidadUna(self, clase) -> bool:
-        # print("esto es: "+str(clase))
-        # clase = clase[0]
-        dia = int(clase[0])-1
+        dia = int(clase[0]) - 1
         horaInicio = int(clase[2:4])
         horaFinal = int(clase[5:7])
         for hora in range(horaInicio, horaFinal):
@@ -104,7 +102,7 @@ class Horario:
         return horario
     
     def mostrarHorario2(self) -> str:
-        # Si el dos, y este si es bueno, porque tiene mano de efrain >:O 
+        
         horario = "HORA        LUNES        MARTES        MIERCOLES        JUEVES        VIERNES        SABADO        DOMINGO\n"
 
         for i in range(6,24):

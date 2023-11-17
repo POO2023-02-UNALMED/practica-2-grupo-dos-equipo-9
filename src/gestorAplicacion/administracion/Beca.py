@@ -25,25 +25,20 @@ class Beca:
     # METODOS
 
     @classmethod
-    def eliminarBeca(cls, beca):
+    def eliminar_beca(cls, beca):
         cls._becas.remove(beca)
     
     @staticmethod
-    def listaBecas():
-        lista = []
-        for beca in Beca._becas:
-            lista.append(beca.getConvenio())
-        return lista
+    def lista_becas():
+        return [beca.get_convenio() for beca in Beca._becas]
     
     @staticmethod
-    def buscandoBeca(becaSel):
-        beca = None
-        for becas in Beca._becas:
-            if becas.getConvenio() == becaSel:
-                beca = becas
-        return beca
-
-
+    def buscando_beca(beca_sel):
+        for beca in Beca._becas:
+            if beca.get_convenio() == beca_sel:
+                return beca
+        return None
+    
     # Setters y Getters
 
     def getCupos(self):
@@ -95,9 +90,9 @@ class Beca:
         self._necesitaRecomendacion = necesita_recomendacion
 
     @classmethod
-    def getBecas(cls):
+    def get_becas(cls):
         return cls._becas
 
     @classmethod
-    def setBecas(cls, becas):
+    def set_becas(cls, becas):
         cls._becas = becas

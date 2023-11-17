@@ -12,43 +12,28 @@ class Usuario(ABC):
         self._facultad = facultad
         Usuario._usuariosTotales.append(self)
 
-
     @abstractmethod
     def __str__(self):
         pass
 
     @classmethod
     def mostrarUsuarios(cls) -> str:
-        retorno = ""
-        i = 1
-        for usuario in cls.getUsuariosTotales():
-            retorno += (
-                str(i) + ". " + usuario._nombre + ", id: " + str(usuario._id) + "\n"
-            )
-            i += 1
-        return retorno
+        return '\n'.join(f"{i}. {usuario._nombre}, id: {usuario._id}" for i, usuario in enumerate(cls.getUsuariosTotales(), 1))
 
-    def comprobacionFacultad(self, usuario) -> bool:
-        facultad1 = self.getFacultad().lower()
-        facultad2 = usuario.getFacultad().lower()
-        return facultad1 == facultad2
+    def comprobacionFacultad(self, otro_usuario) -> bool:
+        return self._facultad.lower() == otro_usuario._facultad.lower()
 
-    def desmatricularDelSistema(usuario) -> None:
-        usuariosTotales = Usuario.getUsuariosTotales()
-        for user in usuariosTotales:
-            if usuario == user:
-                usuariosTotales.remove(usuario)
-                break
+    @classmethod
+    def desmatricularDelSistema(cls, usuario) -> None:
+        cls._usuariosTotales = list(filter(lambda u: u != usuario, cls._usuariosTotales))
 
-    def eliminar_materia(materia) -> None:
+    @classmethod
+    def eliminar_materia(cls, materia) -> None:
         Materia.getMateriasTotales().remove(materia)
 
-    def agregar_materia(
-        nombre, codigo, descripcion, creditos, facultad, prerrequisitos
-    ) -> None:
-        nuevaMateria = Materia(
-            nombre, codigo, descripcion, creditos, facultad, prerrequisitos
-        )
+    @classmethod
+    def agregar_materia(cls, nombre, codigo, descripcion, creditos, facultad, prerrequisitos) -> None:
+        nuevaMateria = Materia(nombre, codigo, descripcion, creditos, facultad, prerrequisitos)
         Materia.getMateriasTotales().append(nuevaMateria)
 
     def getTipo(self):

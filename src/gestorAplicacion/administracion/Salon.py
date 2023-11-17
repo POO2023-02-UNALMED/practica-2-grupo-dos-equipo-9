@@ -7,18 +7,18 @@ class Salon:
     def __init__(self, lugar, aforo):
         self._lugar = lugar
         self._aforo = aforo
-        self._horario = Horario()  # no estoy segura de como hacer eso aca
+        self._horario = Horario()  # Esto puede variar dependiendo de cómo se inicialice el Horario
         Salon._salones.append(self)
 
-    # METODOS
+    # Métodos
 
     @classmethod
     def mostrarSalones(cls):
         retorno = ""
         i = 1
         for salon in Salon._salones:
+            retorno += f"{i}. {salon._lugar}.\n"
             i += 1
-            retorno += str(i) + ". " + salon._lugar + ".\n"
         return retorno
     
     @classmethod
@@ -31,7 +31,7 @@ class Salon:
     @classmethod
     def encontrarSalon(cls, salon):
         for s in Salon._salones:
-            if s.getLugar()==salon:
+            if s.getLugar() == salon:
                 return s
 
     # Setters y Getters

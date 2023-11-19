@@ -113,7 +113,7 @@ class VentInicio(Frame):
 
             # Cambio de imagenes
             global imagF4
-            imagF4=PhotoImage(file=f"Python\src\gestorGrafico\Imagenes\imgInF4.{i}.png")     
+            imagF4=PhotoImage(file=f"C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgInF4.{i}.png")     
    
             ImagenF4.config(image=imagF4)
             
@@ -125,7 +125,7 @@ class VentInicio(Frame):
             else:
                 self.punteroImagen=i
         
-        self.imagenF41 =PhotoImage(file="Python\src\gestorGrafico\Imagenes\imgInF4.1.png")
+        self.imagenF41 =PhotoImage(file="C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgInF4.1.png")
         
         ImagenF4 = Label(p4Frame,image=self.imagenF41,width=300,wraplength=160,highlightbackground="black",highlightthickness=4)
         ImagenF4.pack(side="top",pady=3)

@@ -7,19 +7,19 @@ class VentInicio(Frame):
         
         # Creacion de Frames
 
-        p1Frame=Frame(self,height=450,width=425,bg="#cedae0")
+        p1Frame=Frame(self,height=450,width=425,bg="gray")
         p1Frame.grid(row=0,column=0,columnspan=1,rowspan=1,padx=(5,0),pady=5)
         p1Frame.grid_propagate(False)
 
-        p2Frame=Frame(self,height=450,width=425,bg="#cedae0")
+        p2Frame=Frame(self,height=450,width=425,bg="gray")
         p2Frame.grid(row=0,column=1,columnspan=1,rowspan=1,padx=(0,5),pady=5)
         p2Frame.grid_propagate(False)
 
-        p3Frame=Frame(p1Frame,height=70,width=415,bg="#085870")
+        p3Frame=Frame(p1Frame,height=70,width=415,bg="black")
         p3Frame.grid(row=0,column=0,columnspan=1,rowspan=1,padx=5,pady=(5,3))
         p3Frame.pack_propagate(False)
 
-        p4Frame=Frame(p1Frame,height=365,width=415,bg="#cedae0")
+        p4Frame=Frame(p1Frame,height=365,width=415,bg="gray")
         p4Frame.grid(row=1,column=0,columnspan=2,rowspan=1,padx=5,pady=(3,5))
         p4Frame.pack_propagate(False)
 
@@ -27,13 +27,13 @@ class VentInicio(Frame):
         p5Frame.grid(row=0,column=0,columnspan=1,rowspan=1,padx=5,pady=(5,3))
         p5Frame.pack_propagate(False)
 
-        p6Frame=Frame(p2Frame,height=335,width=335,bg="#085870")
+        p6Frame=Frame(p2Frame,height=335,width=335,bg="black")
         p6Frame.grid(row=1,column=0,columnspan=2,rowspan=1,padx=5,pady=(3,5))
         p6Frame.grid_propagate(False)
 
         # Frame 3 Saludo bienvenida
-        mensaje="Hola, bienvenido al sistemas de matricula de materias S.M.M"
-        mensajeBienv = Label(p3Frame,text=mensaje,font=("arial", 18, "bold"),bg="#085870",wraplength=415,fg="#cedae0")
+        mensaje="Bienvenido al Sistema De Información Academica"
+        mensajeBienv = Label(p3Frame,text=mensaje,font=("Trebuchet MS", 18, "bold"),bg="black",wraplength=415,fg="white")
         mensajeBienv.pack(expand=True)
 
 

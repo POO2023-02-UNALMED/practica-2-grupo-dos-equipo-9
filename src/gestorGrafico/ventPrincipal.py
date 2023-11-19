@@ -15,7 +15,7 @@ class VentPrincipal(Tk):
         self.geometry("865x480")
         self.configure(bg="#cedae0")
         self.pack_propagate(False)
-        self.iconbitmap("Python\src\gestorGrafico\Imagenes\icono.ico")
+        self.iconphoto(True, PhotoImage(file="/home/Rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/iconoRY.png"))
 
         def infoBasica():
             texto = """Bienvenido a nuestra aplicación de Matrícula de Materias.
@@ -111,7 +111,7 @@ Estamos comprometidos con brindarte una experiencia fácil de usar y confiable. 
 
         simbolo = ("   ") #que ponemos aqui???
 
-        self.imagen = PhotoImage(file="Python\src\gestorGrafico\Imagenes\imgVentPrincipal.png")
+        self.imagen = PhotoImage(file="/home/Rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgVentPrincipal.png")
         figura = Label(frame,height=108,width=192,image=self.imagen)
         figura.pack(anchor="center")
 

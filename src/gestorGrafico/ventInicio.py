@@ -1,4 +1,5 @@
 from tkinter import *
+from gestorGrafico.ventPrincipal import VentPrincipal
 
 class VentInicio(Frame):
     def __init__(self,ventana):
@@ -140,7 +141,7 @@ class VentInicio(Frame):
         
         def cambioVentana():
             self.destroy()           
-            ventana.abrirLog()
+            VentPrincipal()
             
         
         botonIngreso=Button(p4Frame,text="Ingresar",command=cambioVentana,bg="black",font=("arial", 12, "bold"),fg="white")

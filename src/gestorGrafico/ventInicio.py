@@ -41,7 +41,7 @@ class VentInicio(Frame):
         bibi1="Mi nombre es Ricardo Lopera, soy estudiante de ciencias de la computacion y matematicas, me gusta acampar y el senderismo, disfruto del rap y el punk, y en mi tiempo libre me gusta tomar cerveza"
         bibi2=""#yiduar ponga  la biografia o esa cosa jajaja
 
-        self.biblios = [bibi1,bibi2,]
+        self.biblios = [bibi1,bibi2]
           
         self.punteroIntergrante =1
         def cambiarTextoEImagenF6(evento):

@@ -10,7 +10,7 @@ from excepciones.ErrorManejo import *
 class VentLog(Tk):
     def __init__(self):
         super().__init__()
-        self.title("Sistema Matricula de Materias")
+        self.title("SDIAcademica")
         self.resizable(0,0)
         self.geometry("865x460")
         self.config(bg="#cedae0",highlightbackground="#085870",highlightthickness=5)

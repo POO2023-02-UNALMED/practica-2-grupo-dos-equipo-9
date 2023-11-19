@@ -10,7 +10,7 @@ from gestorGrafico.eliminarAgregarMateria import EliminarAgregarMateria
 class VentPrincipal(Tk):
     def __init__(self):
         super().__init__()
-        self.title("Sistema Matricula de Materias")
+        self.title("SDIAcademica")
         self.resizable(0, 0)
         self.geometry("865x480")
         self.configure(bg="#cedae0")

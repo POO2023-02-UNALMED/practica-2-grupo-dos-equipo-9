@@ -39,6 +39,5 @@ class MainWin(Tk):
 if __name__=="__main__":
 
     Deserializador.deserializarDatos()
-
-
+    print(Usuario._usuariosTotales)
     MainWin()

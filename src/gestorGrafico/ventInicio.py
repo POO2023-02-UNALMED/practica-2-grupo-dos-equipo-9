@@ -82,7 +82,7 @@ class VentInicio(Frame):
             img2.config(image=packImagenes[1])
             img3.config(image=packImagenes[2])
             img4.config(image=packImagenes[3])
-            
+
         tam=157
 
         self.image1 =PhotoImage(file="Python\src\gestorGrafico\Imagenes\imgIn1_1.png")
@@ -127,13 +127,13 @@ class VentInicio(Frame):
         
         self.imagenF41 =PhotoImage(file="Python\src\gestorGrafico\Imagenes\imgInF4.1.png")
         
-        ImagenF4 = Label(p4Frame,image=self.imagenF41,width=300,wraplength=160,highlightbackground="#085870",highlightthickness=4)
+        ImagenF4 = Label(p4Frame,image=self.imagenF41,width=300,wraplength=160,highlightbackground="black",highlightthickness=4)
         ImagenF4.pack(side="top",pady=3)
         ImagenF4.bind("<Enter>",cambiarTextoEImagenF4)
         
         # Texto descripcion
         
-        descripTexto = Label(p4Frame,text="",font=("arial", 10, "bold"),bg="#cedae0",wraplength=400)
+        descripTexto = Label(p4Frame,text="",font=("arial", 10, "bold"),bg="black",wraplength=400)
         descripTexto.pack(side="top",fill="x",pady=10)
         
         # Boton para pasar
@@ -143,17 +143,17 @@ class VentInicio(Frame):
             ventana.abrirLog()
             
         
-        botonIngreso=Button(p4Frame,text="Ingresar",command=cambioVentana,bg="#085870",font=("arial", 12, "bold"),fg="#cedae0")
+        botonIngreso=Button(p4Frame,text="Ingresar",command=cambioVentana,bg="black",font=("arial", 12, "bold"),fg="white")
         botonIngreso.pack(side="top",pady=(10,20))
            
         
-        # Creacion menu 
+        # Creacion del menu :U
         ventana.menuBar = Menu(ventana)
-        ventana.option_add("*tearOff",  False)
+        ventana.option_add("*tearOff", False)
         ventana.config(menu=ventana.menuBar)
-        menu1= Menu(ventana.menuBar)
-        ventana.menuBar.add_cascade(label="Archivo",menu=menu1)
-        menu1.add_command(label="Salir",command=lambda:ventana.destroy())
+        menu1 = Menu(ventana.menuBar)
+        ventana.menuBar.add_cascade(label="Archivo", menu=menu1)
+        menu1.add_command(label="Salir", command=lambda: ventana.destroy())
         
         textDescrip="SMM es un sistema de gestión académica diseñado para mejorar la administración de asignaturas en instituciones educativas. Está dirigido exclusivamente a coordinadores académicos y tiene como objetivo optimizar los procesos relacionados con la gestión académica."
         menu1.add_command(label="Descripcion",command=lambda: descripTexto.config(text=textDescrip))

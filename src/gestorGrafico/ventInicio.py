@@ -52,10 +52,10 @@ class VentInicio(Frame):
             
             # Cambio de imagenes
             
-            imag1=PhotoImage(file=f"Python\src\gestorGrafico\Imagenes\imgIn{i+1}_1.png")     
-            imag2=PhotoImage(file=f"Python\src\gestorGrafico\Imagenes\imgIn{i+1}_2.png")     
-            imag3=PhotoImage(file=f"Python\src\gestorGrafico\Imagenes\imgIn{i+1}_3.png")     
-            imag4=PhotoImage(file=f"Python\src\gestorGrafico\Imagenes\imgIn{i+1}_4.png")     
+            imag1=PhotoImage(file=f"C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgIn{i+1}_1.png")     
+            imag2=PhotoImage(file=f"C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgIn{i+1}_2.png")     
+            imag3=PhotoImage(file=f"C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgIn{i+1}_3.png")     
+            imag4=PhotoImage(file=f"C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgIn{i+1}_4.png")     
             
             global lisImagenes # Es global para no perder el puntero de las imagenes cuando el metodo finalice
             lisImagenes=[imag1,imag2,imag3,imag4]
@@ -85,10 +85,10 @@ class VentInicio(Frame):
 
         tam=157
 
-        self.image1 =PhotoImage(file="Python\src\gestorGrafico\Imagenes\imgIn1_1.png")
-        self.image2 =PhotoImage(file="Python\src\gestorGrafico\Imagenes\imgIn1_2.png")
-        self.image3 =PhotoImage(file="Python\src\gestorGrafico\Imagenes\imgIn1_3.png")
-        self.image4 =PhotoImage(file="Python\src\gestorGrafico\Imagenes\imgIn1_4.png")
+        self.image1 =PhotoImage(file="C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgIn1_1.png")
+        self.image2 =PhotoImage(file="C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgIn1_2.png")
+        self.image3 =PhotoImage(file="C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgIn1_3.png")
+        self.image4 =PhotoImage(file="C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgIn1_4.png")
 
 
         img1 = Label(p6Frame,image=self.image1,height=tam,width=tam)

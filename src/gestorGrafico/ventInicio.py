@@ -71,7 +71,7 @@ class VentInicio(Frame):
                 self.punteroIntergrante=i
             
 
-        biblioTexto = Label(p5Frame,text=bibi1,font=("arial", 10),bg="#cedae0",wraplength=405,highlightbackground="#085870",highlightthickness=2)
+        biblioTexto = Label(p5Frame,text=bibi1,font=("Comic Sans MS", 10),bg="black",wraplength=405,highlightbackground="black",highlightthickness=2, fg="white")
         biblioTexto.pack(expand=True,fill="both")
         biblioTexto.bind("<Button-1>",cambiarTextoEImagenF6)
 
@@ -82,7 +82,7 @@ class VentInicio(Frame):
             img2.config(image=packImagenes[1])
             img3.config(image=packImagenes[2])
             img4.config(image=packImagenes[3])
-
+            
         tam=157
 
         self.image1 =PhotoImage(file="Python\src\gestorGrafico\Imagenes\imgIn1_1.png")

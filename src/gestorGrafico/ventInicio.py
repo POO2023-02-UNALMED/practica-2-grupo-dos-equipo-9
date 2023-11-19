@@ -38,13 +38,10 @@ class VentInicio(Frame):
 
 
         # Frame 5 Bibliografia de cada desarrollador
-        bibi1="Soy Sebastián Ocampo Galvis, nacido en Medellín un 24 de Septiembre de 2003. Estoy cursando tercer semestre en ingeniería de sistemas en la Universidad Nacional de Colombia. Soy un gran aficionado al deporte y a la informática desde hace muchos años."
-        bibi2="Mi nombre es Mateo Álvarez Murillo, nací en Medellín el 15 de agosto del 2004. Actualmente, curso el tercer semestre de ingeniería de sistemas e informática. Comencé a programar en el equipo de robótica de mi institución, me apasiona el desarrollo de software y todo el mundo de la informática."
-        bibi3="Mi nombre es Ana Sofía Gómez, nací el 4 de Marzo del 2005 en Medellín. Actualmente me encuentro cursando mi segundo semestre de Ingeniería de Sistemas e Informática en la Universidad Nacional. Aparte de lo que involucra la carrera, disfruto mucho de la repostería."
-        bibi4="Mi nombre es Efrain Gomez Ramirez, nací el 14 de Mayo del 2004 en Mompós. Actualmente me encuentro cursando mi tercer semestre de Ingeniería de Sistemas e Informática en la Universidad Nacional. Disfruto participar en eventos de programación competitiva y aprender sobre algoritmia."
-        bibi5="Mi nombre es Libardo Jose Navarro Pedrozo, nací el 26 de Marzo del 2005 en Mompós. Me encuentro cursando mi tercer semestre de Ingeniería de Sistemas e Informática en la Universidad Nacional. Soy un apasionado de las matemáticas, la algoritmia y la informática."
+        bibi1="Mi nombre es Ricardo Lopera, soy estudiante de ciencias de la computacion y matematicas, me gusta acampar y el senderismo, disfruto del rap y el punk, y en mi tiempo libre me gusta tomar cerveza"
+        bibi2=""#yiduar ponga  la biografia o esa cosa jajaja
 
-        self.biblios = [bibi1,bibi2,bibi3,bibi4,bibi5]
+        self.biblios = [bibi1,bibi2,]
           
         self.punteroIntergrante =1
         def cambiarTextoEImagenF6(evento):

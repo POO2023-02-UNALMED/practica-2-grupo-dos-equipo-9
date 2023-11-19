@@ -14,9 +14,9 @@ class MatricularMateria(Frame):
         super().__init__(ventana)
         self._ventana=ventana
         self.pack(expand=True)
-        self.config(highlightbackground="#085870",highlightthickness=3)
+        self.config(highlightbackground="black",highlightthickness=3)
 
-        titulo = Label(self, text="Matricular Materia", foreground="#085870",font=("Helvetica", 14, "bold"))
+        titulo = Label(self, text="Matricular Materia", foreground="gray",font=("Helvetica", 14, "bold"))
         titulo.pack(side="top", anchor="c")
         texto = """En esta parte, debes seleccionar al estudiante deseado de dos formas:
 1. Búsqueda manual: Ingresa el ID y nombre del estudiante.
@@ -25,8 +25,8 @@ class MatricularMateria(Frame):
         descripcion.pack(anchor="n", pady=10)
         opciones = Frame(self)
         opciones.pack()
-        manual = Button(opciones,text="Seleccionar al estudiante\n de forma manual",foreground="white",background="#085870",font=("Helvetica", 12),command=lambda: self.seleccionar_estudiante(caja, label_vacio, False))
-        lista = Button(opciones,text="Seleccionar al estudiante\n mediante una lista",foreground="white",background="#085870",font=("Helvetica", 12),command=lambda: self.seleccionar_estudiante(caja, label_vacio, True))
+        manual = Button(opciones,text="Seleccionar al estudiante\n de forma manual",foreground="white",background="black",font=("Helvetica", 12),command=lambda: self.seleccionar_estudiante(caja, label_vacio, False))
+        lista = Button(opciones,text="Seleccionar al estudiante\n mediante una lista",foreground="white",background="black",font=("Helvetica", 12),command=lambda: self.seleccionar_estudiante(caja, label_vacio, True))
         manual.pack(side=LEFT, padx=(0, 10))
         lista.pack(side=LEFT, padx=(10, 10))
         busqueda = Frame(self)

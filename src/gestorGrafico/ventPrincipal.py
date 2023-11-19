@@ -13,7 +13,7 @@ class VentPrincipal(Tk):
         self.title("SDIAcademica")
         self.resizable(0, 0)
         self.geometry("865x480")
-        self.configure(bg="#cedae0")
+        self.configure(bg="black")
         self.pack_propagate(False)
         self.iconphoto(True, PhotoImage(file="/home/Rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/iconoRY.png"))
 
@@ -106,10 +106,8 @@ Estamos comprometidos con brindarte una experiencia fácil de usar y confiable. 
         frame.pack(anchor="center",expand=True)
         # frame.pack_propagate(False)
 
-        bienvenida_label = Label(frame, text="¡Bienvenidos a la ventana principal, saludan Y&R!", font=("Arial", 14), fg="white", bg="#085870")
+        bienvenida_label = Label(frame, text="¡Bienvenidos a la ventana principal, saludan Y&R!", font=("Trebuchet MS", 14), fg="black", bg="gray")
         bienvenida_label.pack(padx=10, pady=10)
-
-        simbolo = ("   ") #que ponemos aqui???
 
         self.imagen = PhotoImage(file="/home/Rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgVentPrincipal.png")
         figura = Label(frame,height=108,width=192,image=self.imagen)
@@ -130,7 +128,7 @@ Estamos comprometidos con brindarte una experiencia fácil de usar y confiable. 
 
         """
         
-        info_text = Label(frame, text=informacion, font=("Arial", 10), fg="white",bg="#085870")
+        info_text = Label(frame, text=informacion, font=("Arial", 10), fg="white",bg="black")
         info_text.pack(padx=10, pady=10)
 
         self.mainloop()

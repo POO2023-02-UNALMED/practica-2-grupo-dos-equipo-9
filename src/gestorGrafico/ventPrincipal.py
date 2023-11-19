@@ -106,7 +106,7 @@ Estamos comprometidos con brindarte una experiencia fácil de usar y confiable. 
         frame.pack(anchor="center",expand=True)
         # frame.pack_propagate(False)
 
-        bienvenida_label = Label(frame, text="¡Bienvenido a la ventana principal de S.M.M!", font=("Arial", 14), fg="white", bg="#085870")
+        bienvenida_label = Label(frame, text="¡Bienvenidos a la ventana principal, saludan Y&R!", font=("Arial", 14), fg="white", bg="#085870")
         bienvenida_label.pack(padx=10, pady=10)
 
         simbolo = ("   ") #que ponemos aqui???

@@ -141,7 +141,7 @@ class VentInicio(Frame):
         
         def cambioVentana():
             self.destroy()           
-            VentPrincipal()
+            ventana.abrirLog()
             
         
         botonIngreso=Button(p4Frame,text="Ingresar",command=cambioVentana,bg="black",font=("arial", 12, "bold"),fg="white")

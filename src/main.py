@@ -21,7 +21,7 @@ from baseDatos.Deserializador import Deserializador
 class MainWin(Tk):
     def __init__(self):
         super().__init__()
-        self.title("Sistema Matricula de Materias")
+        self.title("Gestor  de Matriculas")
         self.resizable(0,0)
         self.geometry("865x480")
         self.iconphoto(True, PhotoImage(file="/home/Rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/iconoRY.png"))

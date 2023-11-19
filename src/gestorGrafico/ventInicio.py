@@ -36,13 +36,10 @@ class VentInicio(Frame):
         mensajeBienv = Label(p3Frame,text=mensaje,font=("Trebuchet MS", 18, "bold"),bg="black",wraplength=415,fg="white")
         mensajeBienv.pack(expand=True)
 
-
         # Frame 5 Bibliografia de cada desarrollador
         bibi1="Mi nombre es Ricardo Lopera, soy estudiante de ciencias de la computacion y matematicas, me gusta acampar y el senderismo, disfruto del rap y el punk, y en mi tiempo libre me gusta tomar cerveza"
-        bibi2=""#yiduar ponga  la biografia o esa cosa jajaja
-
-        self.biblios = [bibi1,bibi2]
-          
+        bibi2="fadkfñadslksadjñfldskajf"#yiduar ponga  la biografia o esa cosa jajaja
+         
         self.punteroIntergrante =1
         def cambiarTextoEImagenF6(evento):
             i=self.punteroIntergrante
@@ -52,10 +49,10 @@ class VentInicio(Frame):
             
             # Cambio de imagenes
             
-            imag1=PhotoImage(file=f"C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgIn{i+1}_1.png")     
-            imag2=PhotoImage(file=f"C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgIn{i+1}_2.png")     
-            imag3=PhotoImage(file=f"C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgIn{i+1}_3.png")     
-            imag4=PhotoImage(file=f"C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgIn{i+1}_4.png")     
+            imag1=PhotoImage(file=f"/home/Rick/Downloads/practica-1-grupo-2-equipo-7-main/Python/src/gestorGrafico/Imagenes/imgIn{i+1}_1.png")     
+            imag2=PhotoImage(file=f"/home/Rick/Downloads/practica-1-grupo-2-equipo-7-main/Python/src/gestorGrafico/Imagenes/imgIn{i+1}_2.png")     
+            imag3=PhotoImage(file=f"/home/Rick/Downloads/practica-1-grupo-2-equipo-7-main/Python/src/gestorGrafico/Imagenes/imgIn{i+1}_3.png")     
+            imag4=PhotoImage(file=f"/home/Rick/Downloads/practica-1-grupo-2-equipo-7-main/Python/src/gestorGrafico/Imagenes/imgIn{i+1}_4.png")     
             
             global lisImagenes # Es global para no perder el puntero de las imagenes cuando el metodo finalice
             lisImagenes=[imag1,imag2,imag3,imag4]
@@ -85,10 +82,10 @@ class VentInicio(Frame):
 
         tam=157
 
-        self.image1 =PhotoImage(file="C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgIn1_1.png")
-        self.image2 =PhotoImage(file="C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgIn1_2.png")
-        self.image3 =PhotoImage(file="C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgIn1_3.png")
-        self.image4 =PhotoImage(file="C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgIn1_4.png")
+        self.image1 =PhotoImage(file="/home/Rick/Downloads/practica-1-grupo-2-equipo-7-main/Python/src/gestorGrafico/Imagenes/imgIn1_1.png")
+        self.image2 =PhotoImage(file="/home/Rick/Downloads/practica-1-grupo-2-equipo-7-main/Python/src/gestorGrafico/Imagenes/imgIn1_2.png")
+        self.image3 =PhotoImage(file="/home/Rick/Downloads/practica-1-grupo-2-equipo-7-main/Python/src/gestorGrafico/Imagenes/imgIn1_3.png")
+        self.image4 =PhotoImage(file="/home/Rick/Downloads/practica-1-grupo-2-equipo-7-main/Python/src/gestorGrafico/Imagenes/imgIn1_4.png")
 
 
         img1 = Label(p6Frame,image=self.image1,height=tam,width=tam)
@@ -113,7 +110,7 @@ class VentInicio(Frame):
 
             # Cambio de imagenes
             global imagF4
-            imagF4=PhotoImage(file=f"C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgInF4.{i}.png")     
+            imagF4=PhotoImage(file=f"/home/Rick/Downloads/practica-1-grupo-2-equipo-7-main/Python/src/gestorGrafico/Imagenes/imgInF4.{i}.png")     
    
             ImagenF4.config(image=imagF4)
             
@@ -125,7 +122,7 @@ class VentInicio(Frame):
             else:
                 self.punteroImagen=i
         
-        self.imagenF41 =PhotoImage(file="C:\Users\yidua\Documents\GitHub\practica-2-grupo-dos-equipo-9\src\gestorGrafico\Imagenes\imgInF4.1.png")
+        self.imagenF41 =PhotoImage(file="/home/Rick/Downloads/practica-1-grupo-2-equipo-7-main/Python/src/gestorGrafico/Imagenes/imgInF4.1.png")
         
         ImagenF4 = Label(p4Frame,image=self.imagenF41,width=300,wraplength=160,highlightbackground="black",highlightthickness=4)
         ImagenF4.pack(side="top",pady=3)

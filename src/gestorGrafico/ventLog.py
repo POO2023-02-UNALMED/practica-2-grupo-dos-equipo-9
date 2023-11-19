@@ -13,10 +13,10 @@ class VentLog(Tk):
         self.title("SDIAcademica")
         self.resizable(0,0)
         self.geometry("865x460")
-        self.config(bg="#cedae0",highlightbackground="#085870",highlightthickness=5)
+        self.config(bg="black",highlightbackground="white",highlightthickness=5)
         self.iconphoto(True, PhotoImage(file="/home/Rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/iconoRY.png"))
 
-        frame = Frame(self, width=400, height=200,bg="#cedae0",highlightbackground="#085870",highlightthickness=5)
+        frame = Frame(self, width=400, height=200,bg="white",highlightbackground="gray",highlightthickness=5)
         frame.pack(expand=True)
 
         def mostrarContraseña():
@@ -70,13 +70,13 @@ class VentLog(Tk):
             except ValueError:
                 messagebox.showerror("Error",CampoInvalido().mostrarMensaje())
              
-        usuar = Label(frame,text="Usuario",bg="#cedae0",font=("arial", 11, "bold"))
+        usuar = Label(frame,text="Usuario",bg="white",font=("Trebuchet MS", 11, "bold"))
         entrada1 = Entry(frame)
-        cont = Label(frame,text="Contraseña",bg="#cedae0",font=("arial", 11, "bold"))
+        cont = Label(frame,text="Contraseña",bg="white",font=("Trebuchet MS", 11, "bold"))
         entrada2 = Entry(frame, show="*")
-        boton_ingresar = Button(frame, text="Iniciar Sesion", command= verificar,bg="#085870",font=("arial", 11, "bold"),fg="#cedae0")
-        boton_limpiar = Button(frame, text="Limpiar", command= limpiar,bg="#085870",font=("arial", 11, "bold"),fg="#cedae0")
-        revisar = Checkbutton(frame, text="Mostrar contraseña", command= mostrarContraseña,bg="#cedae0",font=("arial", 11))        
+        boton_ingresar = Button(frame, text="Iniciar Sesion", command= verificar,bg="black",font=("Trebuchet MS", 11, "bold"),fg="white")
+        boton_limpiar = Button(frame, text="Limpiar", command= limpiar,bg="black",font=("Trebuchet MS", 11, "bold"),fg="white")
+        revisar = Checkbutton(frame, text="Mostrar contraseña", command= mostrarContraseña,bg="white",font=("Trebuchet MS", 11))        
         
         usuar.grid(row=0,column=0,padx=10,pady=10,sticky="w")
         entrada1.grid(row=0,column=1,columnspan=2,padx=10,pady=10)

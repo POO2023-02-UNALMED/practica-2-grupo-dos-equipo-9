@@ -40,13 +40,13 @@ class agregarGrupo(Frame):
                 botonSiguiente.pack_forget()
                 subFrame = Frame(self, bg="#cedae0")
                 subFrame.pack(padx=5, pady=5)
-                diaL = Label(subFrame, text="Día", font=("Arial", 11), fg="white", bg="#085870")
+                diaL = Label(subFrame, text="Día", font=("Arial", 11), fg="white", bg="black")
                 diaL.grid(row=0, column=0, padx=10, pady=8)
 
-                hiL = Label(subFrame, text="Hora Inicio", font=("Arial", 11), fg="white", bg="#085870")
+                hiL = Label(subFrame, text="Hora Inicio", font=("Arial", 11), fg="white", bg="black")
                 hiL.grid(row=0, column=1, padx=10, pady=8)
 
-                hfL = Label(subFrame, text="Hora Final", font=("Arial", 11), fg="white", bg="#085870")
+                hfL = Label(subFrame, text="Hora Final", font=("Arial", 11), fg="white", bg="black")
                 hfL.grid(row=0, column=2, padx=10, pady=8)
 
                 dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
@@ -103,10 +103,10 @@ class agregarGrupo(Frame):
                 otroFrame = Frame(self, bg="#cedae0")
                 otroFrame.pack(padx=5, pady=5)
 
-                bAgregar = Button(otroFrame, text="Agregar grupo", command=agregar, font=("Arial", 11), fg="white", bg="#085870")
+                bAgregar = Button(otroFrame, text="Agregar grupo", command=agregar, font=("Arial", 11), fg="white", bg="black")
                 bAgregar.grid(row=sesiones+1, column=0, padx=10, pady=10, sticky='e')
 
-                bLimpiar = Button(otroFrame, text="Limpiar", command=limpiar2, font=("Arial", 11), fg="white", bg="#085870")
+                bLimpiar = Button(otroFrame, text="Limpiar", command=limpiar2, font=("Arial", 11), fg="white", bg="black")
                 bLimpiar.grid(row=sesiones+1, column=1, padx=10, pady=10)
             except:
                 messagebox.showerror("Error", CampoInvalido().mostrarMensaje())
@@ -117,52 +117,52 @@ class agregarGrupo(Frame):
             lProfes = Profesor.nombresProfesDeMateria(mate)
             profeC["values"] = lProfes
 
-        titulo = Label(self, text="Agregar Grupo", font=("Arial", 14),  fg="white", bg="#085870")
+        titulo = Label(self, text="Agregar Grupo", font=("Arial", 14), fg="white", bg="black")
         titulo.pack(side="top", anchor="c", padx=5, pady=5)
 
         texto = ("A continuación, deberá ingresar la información necesaria para agregar\n un grupo a una materia registrada en el sistema.")
-        descripcion = Label(self, text=texto, font=("Arial", 11), fg="white", bg="#085870")
+        descripcion = Label(self, text=texto, font=("Arial", 11), fg="white", bg="black")
         descripcion.pack(anchor="n", pady=20, padx=5)
 
-        sFrame = Frame(self, bg="#cedae0")
+        sFrame = Frame(self, bg="grey")
         sFrame.pack(padx=5, pady=5)
 
-        tituloC = Label(sFrame, text="Criterios", font=("Arial", 11), fg="white", bg="#085870")
+        tituloC = Label(sFrame, text="Criterios", font=("Arial", 11), fg="white", bg="black")
         tituloC.grid(row=0, column=0, padx=10, pady=8)
 
-        tituloV = Label(sFrame, text="Valores", font=("Arial", 11), fg="white", bg="#085870")
+        tituloV = Label(sFrame, text="Valores", font=("Arial", 11), fg="white", bg="black")
         tituloV.grid(row=0, column=1, padx=10, pady=8)
 
-        mateL = Label(sFrame, text="Materia", font=("Arial", 11), fg="white", bg="#085870")
+        mateL = Label(sFrame, text="Materia", font=("Arial", 11), fg="white", bg="black")
         mateL.grid(row=1, column=0, padx=10, pady=8)
         vMates = Materia.listaNombresMaterias()
         mateC = ttk.Combobox(sFrame, values=vMates, font=("Arial", 10))
         mateC.grid(row=1, column=1, padx=10, pady=8)
         mateC.bind("<<ComboboxSelected>>", filtrarProfes)
 
-        profeL = Label(sFrame, text="Profesor", font=("Arial", 11), fg="white", bg="#085870")
+        profeL = Label(sFrame, text="Profesor", font=("Arial", 11), fg="white", bg="black")
         profeL.grid(row=2, column=0, padx=10, pady=8)
         profeC = ttk.Combobox(sFrame, font=("Arial", 10))
         profeC.grid(row=2, column=1, padx=10, pady=8)
 
-        cuposL = Label(sFrame, text="Cupos", font=("Arial", 11), fg="white", bg="#085870")
+        cuposL = Label(sFrame, text="Cupos", font=("Arial", 11), fg="white", bg="black")
         cuposL.grid(row=3, column=0, padx=10, pady=8)
         cuposE = Entry(sFrame, font=("Arial", 11))
         cuposE.grid(row=3, column=1, padx=10, pady=8)
 
-        salonL = Label(sFrame, text="Salón", font=("Arial", 11), fg="white", bg="#085870")
+        salonL = Label(sFrame, text="Salón", font=("Arial", 11), fg="white", bg="black")
         salonL.grid(row=4, column=0, padx=10, pady=8)
         vSalones = Salon.nombresSalones()
         salonC = ttk.Combobox(sFrame, values=vSalones, font=("Arial", 10))
         salonC.grid(row=4, column=1, padx=10, pady=8)
 
-        sesionesL = Label(sFrame, text="# Sesiones de clase", font=("Arial", 11), fg="white", bg="#085870")
+        sesionesL = Label(sFrame, text="# Sesiones de clase", font=("Arial", 11), fg="white", bg="black")
         sesionesL.grid(row=5, column=0, padx=10, pady=8)
         sesionesE = Entry(sFrame, font=("Arial", 11))
         sesionesE.grid(row=5, column=1, padx=10, pady=8)
 
-        botonSiguiente = Button(sFrame, text="Siguiente", command=siguiente, font=("Arial", 11), fg="white", bg="#085870")
+        botonSiguiente = Button(sFrame, text="Siguiente", command=siguiente, font=("Arial", 11), fg="white", bg="black")
         botonSiguiente.grid(row=6, column=0, padx=10, pady=10, sticky='e')
 
-        botonLimpiar = Button(sFrame, text="Limpiar", command=limpiar1, font=("Arial", 11), fg="white", bg="#085870")
+        botonLimpiar = Button(sFrame, text="Limpiar", command=limpiar1, font=("Arial", 11), fg="white", bg="black")
         botonLimpiar.grid(row=6, column=1, padx=10, pady=10)

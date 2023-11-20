@@ -1,10 +1,11 @@
 from gestorAplicacion.administracion.Horario import Horario
 import random
 
+
 class Profesor:
     _profesores = []
 
-    def __init__(self, nombre, facultad, materiasDadas, horario=Horario(), grupos=None):
+    def __init__(self, nombre, facultad, materiasDadas, horario=Horario(), grupos=[]):
         self._nombre = nombre
         self._facultad = facultad
         self._materiasDadas = materiasDadas
@@ -12,25 +13,32 @@ class Profesor:
         self._grupos = grupos if grupos is not None else []
         Profesor._profesores.append(self)
 
-    def vincularGrupo(self, grupo):
-        self._grupos.append(grupo)
-        self._horario.ocuparHorario(grupo, grupo.getHorario())
+    def vincularGrupo(self, g):
+        self._grupos.append(g)
+        self._horario.ocuparHorario(g, g.getHorario())
 
-    def desvincularGrupo(self, grupo):
-        if grupo in self._grupos:
-            self._horario.liberarHorario(grupo.getHorario())
-            self._grupos.remove(grupo)
+    def desvincularGrupo(self, g):
+        if g in self._grupos:
+            indice = self._grupos.index(g)
+            horaLibre = self._grupos[indice].getHorario()
+            self._horario.liberarHorario(horaLibre)
+            self._grupos.remove(g)
 
     def daMateria(self, nombre):
-        return any(materia.getNombre() == nombre for materia in self._materiasDadas)
+        for materia in self.getMateriasDadas():
+            if materia.getNombre() == nombre:
+                return True
+        return False
 
     @classmethod
     def recomendarEstudiante(cls, estudiante):
         for profesor in cls._profesores:
             chance = 0
             suerte = random.randint(1, 10)
-            if any(grupo.getProfesor() == profesor for grupo in estudiante.getGruposVistos()):
-                chance += 5
+            for grupo in estudiante.getGruposVistos():
+                if grupo.getProfesor().getNombre() == profesor.getNombre():
+                    chance += 5
+                    break
             if estudiante.getFacultad() == profesor.getFacultad():
                 chance += 3
             if chance >= suerte:
@@ -39,64 +47,83 @@ class Profesor:
 
     @classmethod
     def mostrarProfesores(cls):
-        return '\n'.join(f"{i}. {profesor.getNombre()}. Materias: {', '.join(materia.getNombre() for materia in profesor.getMateriasDadas())}." for i, profesor in enumerate(cls._profesores, 1))
+        r = ""
+        i = 1
+        for profesor in cls._profesores:
+            r += f"{i}. {profesor.getNombre()}. Materias: "
+            for materia in profesor.getMateriasDadas():
+                if (
+                    profesor.getMateriasDadas().index(materia)
+                    == len(profesor.getMateriasDadas()) - 1
+                ):
+                    r += f"{materia.getNombre()}.\n"
+                else:
+                    r += f"{materia.getNombre()}, "
+            i += 1
+        return r
 
     @classmethod
     def profesoresDeMateria(cls, nombre):
-        return [profesor for profesor in cls._profesores if profesor.daMateria(nombre)]
-
+        profes = []
+        for profesor in cls._profesores:
+            if profesor.daMateria(nombre) and profesor not in profes:
+                profes.append(profesor)
+        return profes
+    
     @classmethod
     def nombresProfesDeMateria(cls, materia):
-        return [profesor.getNombre() for profesor in cls._profesores if profesor.daMateria(materia)]
+        profes = []
+        for profesor in cls._profesores:
+            if profesor.daMateria(materia) and profesor not in profes:
+                profes.append(profesor.getNombre())
+        return profes
 
     @classmethod
-    def encontrarProfe(cls, nombre):
-        return next((profe for profe in cls._profesores if profe.getNombre() == nombre), None)
+    def encontrarProfe(cls, profesor):
+        for profe in Profesor._profesores:
+            if profe.getNombre()== profesor:
+                return profe
 
     @classmethod
     def mostrarProfesMateria(cls, nombre):
-        profes = cls.profesoresDeMateria(nombre)
-        return '\n'.join(f"{i}. {profesor.getNombre()}." for i, profesor in enumerate(profes, 1))
+        r = ""
+        i = 1
+        profes = cls._profesoresDeMateria(nombre)
+        for profesor in profes:
+            r += f"{i}. {profesor.getNombre()}.\n"
+            i += 1
+        return r
 
-    @property
-    def nombre(self):
+    def getNombre(self):
         return self._nombre
 
-    @nombre.setter
-    def nombre(self, nombre):
+    def setNombre(self, nombre):
         self._nombre = nombre
 
-    @property
-    def facultad(self):
+    def getFacultad(self):
         return self._facultad
 
-    @facultad.setter
-    def facultad(self, facultad):
+    def setFacultad(self, facultad):
         self._facultad = facultad
 
-    @property
-    def materiasDadas(self):
+    def getMateriasDadas(self):
         return self._materiasDadas
 
-    @materiasDadas.setter
-    def materiasDadas(self, materiasDadas):
+    def setMateriasDadas(self, materiasDadas):
         self._materiasDadas = materiasDadas
 
-    @property
-    def grupos(self):
+    def getGrupos(self):
         return self._grupos
 
-    @grupos.setter
-    def grupos(self, grupos):
+    def setGrupos(self, grupos):
         self._grupos = grupos
 
-    @property
-    def horario(self):
+    def setHorario(self, horario):
+        self._horario = horario
+
+    def getHorario(self):
         return self._horario
 
-    @horario.setter
-    def horario(self, horario):
-        self._horario = horario
     @classmethod
     def getProfesores(cls):
         return cls._profesores

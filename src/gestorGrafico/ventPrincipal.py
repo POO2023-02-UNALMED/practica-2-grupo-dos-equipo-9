@@ -85,8 +85,8 @@ Estamos comprometidos con brindarte una experiencia fácil de usar y confiable. 
         menu1 = Menu(menuBar)
         menuBar.add_cascade(label="Archivo", menu=menu1)
 
-        menu1.add_cascade(label="Aplicacion", command=infoBasica)
-        menu1.add_cascade(label="Salir", command=salir)
+        menu1.add_command(label="Aplicacion", command=infoBasica)
+        menu1.add_command(label="Salir", command=salir)
 
         menu2 = Menu(menuBar)
         menuBar.add_cascade(label="Procesos y Consultas", menu=menu2)
@@ -106,7 +106,7 @@ Estamos comprometidos con brindarte una experiencia fácil de usar y confiable. 
         menu3 = Menu(menuBar)
         menuBar.add_cascade(label="Ayuda", menu=menu3)
 
-        menu3.add_cascade(label="Acerca de", command=mostrarAutores)
+        menu3.add_command(label="Acerca de", command=mostrarAutores)
 
         frame = Frame(self)
         frame.pack(anchor="center",expand=True)

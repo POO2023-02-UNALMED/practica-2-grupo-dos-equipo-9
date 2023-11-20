@@ -10,7 +10,7 @@ from gestorGrafico.FieldFrame import FieldFrame
 class AplicarBeca(Frame):
     def __init__(self, ventana):
         super().__init__(ventana)
-        self.config(highlightbackground="#085870",highlightthickness=3)
+        self.config(bg="black", highlightbackground="grey", highlightthickness=3)
         self.pack(expand=True)
     
         estudiantesBeneficiados = []
@@ -55,7 +55,7 @@ class AplicarBeca(Frame):
                 messagebox.showerror("Error", "Debe seleccionar una beca y un estudiante de los listados para poder continuar.")
                     
     
-        titulo = Label(self, text="Aplicar Beca a Estudiante", bg="#cedae0", foreground="#085870", font=("Helvetica", 14, "bold"))
+        titulo = Label(self, text="Aplicar Beca a Estudiante", bg="black", foreground="grey", font=("Helvetica", 14, "bold"))
         titulo.pack(side="top", anchor="c")
 
         textoDesc = ("A continuación, deberá seleccionar de las listas qué estudiante quiere postular y a qué beca quiere que aplique,\n en caso de cumplir con los requisitos, la ayuda económica será asignada y será informado.")

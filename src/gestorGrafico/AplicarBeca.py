@@ -59,15 +59,15 @@ class AplicarBeca(Frame):
         titulo.pack(side="top", anchor="c")
 
         textoDesc = ("A continuación, deberá seleccionar de las listas qué estudiante quiere postular y a qué beca quiere que aplique,\n en caso de cumplir con los requisitos, la ayuda económica será asignada y será informado.")
-        descripcion = Label(self, text=textoDesc, bg="#cedae0", font=("Arial", 10),fg= "white")
+        descripcion = Label(self, text=textoDesc, bg="white", font=("Arial", 10))
         descripcion.pack(anchor="n", pady=20)
 
-        aplicandoFrame = Frame(self,bg="#cedae0")
+        aplicandoFrame = Frame(self,bg="white")
         aplicandoFrame.pack()
 
-        becaTit = Label(aplicandoFrame, text = "Becas existentes", bg="#cedae0", font=("Arial", 11, "bold"))
+        becaTit = Label(aplicandoFrame, text = "Becas existentes", bg="white", font=("Arial", 11, "bold"))
         becaTit.grid(row=0, column=0, padx=10, pady=10)
-        estTit = Label(aplicandoFrame, text = "Estudiantes matriculados", bg="#cedae0", font=("Arial", 11, "bold"))
+        estTit = Label(aplicandoFrame, text = "Estudiantes matriculados", bg="white", font=("Arial", 11, "bold"))
         estTit.grid(row=1, column=0, padx=10, pady=10)
 
         becasE = Beca.listaBecas()
@@ -80,5 +80,5 @@ class AplicarBeca(Frame):
         comboEst = ttk.Combobox(aplicandoFrame, values=estE, textvariable= textoPre)
         comboEst.grid(row=1, column=1, padx=10, pady=10)
 
-        boton = Button(self, text="Aplicar Beca", command=asigBeca, font=("Arial", 11, "bold"), fg="white", bg="#085870")
+        boton = Button(self, text="Aplicar Beca", command=asigBeca, font=("Arial", 11, "bold"), fg="white", bg="black")
         boton.pack()

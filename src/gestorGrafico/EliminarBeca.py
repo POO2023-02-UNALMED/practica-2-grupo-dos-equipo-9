@@ -7,7 +7,7 @@ from gestorGrafico.FieldFrame import FieldFrame
 class EliminarBeca(Frame):
     def __init__(self, ventana):
         super().__init__(ventana)
-        self.config(highlightbackground="#085870",highlightthickness=3)
+        self.config(highlightbackground="#000000", highlightthickness=3, bg="#000000")  # Fondo negro
         self.pack(expand=True)
 
         def confEliminar():
@@ -22,17 +22,17 @@ class EliminarBeca(Frame):
 
                 
 
-        titulo = Label(self, text="Eliminar Beca", bg="#cedae0", foreground="#085870", font=("Helvetica", 14, "bold"))
+        titulo = Label(self, text="Eliminar Beca", bg="#000000", foreground="#FFFFFF", font=("Helvetica", 14, "bold"))  # Fondo negro, texto blanco
         titulo.pack(side="top", anchor="c")
 
         textoDesc = ("A continuación, deberá seleccionar de la lista de becas existentes\n cuál de estas desea eliminar.")
-        descripcion = Label(self, text=textoDesc, bg="#cedae0", font=("Arial", 11), fg="#110433")
+        descripcion = Label(self, text=textoDesc, bg="#000000", font=("Arial", 11), fg="#FFFFFF")  # Fondo negro, texto blanco
         descripcion.pack(anchor="n", pady=20)
 
-        becaFrame = Frame(self,bg="#cedae0")
+        becaFrame = Frame(self, bg="#000000")  # Fondo negro
         becaFrame.pack()
 
-        becaTit = Label(becaFrame, text = "Becas existentes", bg="#cedae0", font=("Arial", 11, "bold"))
+        becaTit = Label(becaFrame, text="Becas existentes", bg="#000000", font=("Arial", 11, "bold"), fg="#FFFFFF")  # Fondo negro, texto blanco
         becaTit.grid(row=0, column=0, padx=10, pady=10)
 
         becasE = Beca.listaBecas()
@@ -40,5 +40,5 @@ class EliminarBeca(Frame):
         comboBecas = ttk.Combobox(becaFrame, values=becasE, textvariable= textoDefault)
         comboBecas.grid(row=0, column=1, padx=10, pady=10)
         
-        boton = Button(self, text="Eliminar Beca", command=confEliminar, font=("Arial", 11, "bold"), fg="white", bg="#085870")
+        boton = Button(self, text="Eliminar Beca", command=confEliminar, font=("Arial", 11, "bold"), fg="#000000", bg="#696969")  # Texto negro, gris
         boton.pack()

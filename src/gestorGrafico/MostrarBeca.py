@@ -8,7 +8,7 @@ from gestorGrafico.FieldFrame import FieldFrame
 class MostrarBeca(Frame):
     def __init__(self, ventana):
         super().__init__(ventana)
-        self.config(bg="#cedae0")
+        self.config(bg="#000000")  # Cambia el fondo a negro
 
         def mosBeca():
             infoBecas = ""
@@ -20,16 +20,16 @@ class MostrarBeca(Frame):
             return infoBecas
 
 
-        tituloenventana = Label(self, text="Mostrar Becas Existentes", bg="#085870", foreground="white", font=("Helvetica", 14, "bold"))
+        tituloenventana = Label(self, text="Mostrar Becas Existentes", bg="#000000", foreground="white", font=("Helvetica", 14, "bold"))  # Fondo negro, texto blanco
         tituloenventana.pack(side="top", anchor="c", padx=5, pady=5)
         textodescriptivo = ("A continuación puede conocer información básica sobre las becas activas actualmente.  ")
-        descripcion = Label(self, text=textodescriptivo, font=("Arial", 11), bg="#cedae0", fg="#110433")
+        descripcion = Label(self, text=textodescriptivo, font=("Arial", 11), bg="#000000", fg="#FFFFFF")  # Fondo negro, texto blanco
         descripcion.pack(anchor="n", pady=20)
 
-        contenedor = Frame(self,bg="#cedae0")
+        contenedor = Frame(self, bg="#000000")  # Fondo negro
         contenedor.pack() 
 
-        lista = Text(contenedor, border=False, font=("Arial", 11))
+        lista = Text(contenedor, border=False, font=("Arial", 11), bg="#000000", fg="#FFFFFF")  # Fondo negro, texto blanco
         lista.pack()
         lista.configure(height=35)
         text = mosBeca()

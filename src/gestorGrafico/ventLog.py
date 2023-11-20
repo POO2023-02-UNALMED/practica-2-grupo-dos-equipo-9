@@ -14,7 +14,7 @@ class VentLog(Tk):
         self.resizable(0,0)
         self.geometry("865x460")
         self.config(bg="black",highlightbackground="white",highlightthickness=5)
-        self.iconphoto(True, PhotoImage(file="/home/Rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/iconoRY.png"))
+        self.iconphoto(True, PhotoImage(file="/home/rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/iconoRY.png"))
 
         frame = Frame(self, width=400, height=200,bg="white",highlightbackground="gray",highlightthickness=5)
         frame.pack(expand=True)

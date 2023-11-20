@@ -1,7 +1,17 @@
 class Beca:
     _becas = []
 
-    def __init__(self,cupos,convenio,promedioRequerido,avanceRequerido,estratoMinimo,creditosInscritosRequeridos,ayudaEconomica,necesitaRecomendacion,):
+    def __init__(
+        self,
+        cupos,
+        convenio,
+        promedioRequerido,
+        avanceRequerido,
+        estratoMinimo,
+        creditosInscritosRequeridos,
+        ayudaEconomica,
+        necesitaRecomendacion,
+    ):
         self._cupos = cupos
         self._convenio = convenio
         self._promedioRequerido = promedioRequerido
@@ -20,15 +30,20 @@ class Beca:
     
     @staticmethod
     def listaBecas():
-        return [beca.get_convenio() for beca in Beca._becas]
+        lista = []
+        for beca in Beca._becas:
+            lista.append(beca.getConvenio())
+        return lista
     
     @staticmethod
-    def buscandoBeca(beca_sel):
-        for beca in Beca._becas:
-            if beca.get_convenio() == beca_sel:
-                return beca
-        return None
-    
+    def buscandoBeca(becaSel):
+        beca = None
+        for becas in Beca._becas:
+            if becas.getConvenio() == becaSel:
+                beca = becas
+        return beca
+
+
     # Setters y Getters
 
     def getCupos(self):
@@ -39,7 +54,7 @@ class Beca:
 
     def getConvenio(self):
         return self._convenio
-    
+
     def setConvenio(self, nuevo_convenio):
         self._convenio = nuevo_convenio
 

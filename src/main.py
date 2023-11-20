@@ -24,7 +24,7 @@ class MainWin(Tk):
         self.title("Sistema Matricula de Materias")
         self.resizable(0,0)
         self.geometry("865x480")
-        self.iconphoto(True, PhotoImage(file="/home/Rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/iconoRY.png"))
+        self.iconphoto(True, PhotoImage(file="/home/rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/iconoRY.png"))
 
         
         Coordinador.setUsuarioIngresado(None)

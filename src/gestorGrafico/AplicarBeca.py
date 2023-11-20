@@ -59,7 +59,7 @@ class AplicarBeca(Frame):
         titulo.pack(side="top", anchor="c")
 
         textoDesc = ("A continuación, deberá seleccionar de las listas qué estudiante quiere postular y a qué beca quiere que aplique,\n en caso de cumplir con los requisitos, la ayuda económica será asignada y será informado.")
-        descripcion = Label(self, text=textoDesc, bg="#cedae0", font=("Arial", 10))
+        descripcion = Label(self, text=textoDesc, bg="#cedae0", font=("Arial", 10),fg= "white")
         descripcion.pack(anchor="n", pady=20)
 
         aplicandoFrame = Frame(self,bg="#cedae0")

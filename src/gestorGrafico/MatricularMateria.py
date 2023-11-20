@@ -16,7 +16,7 @@ class MatricularMateria(Frame):
         self.pack(expand=True)
         self.config(highlightbackground="black",highlightthickness=3)
 
-        titulo = Label(self, text="Matricular Materia", foreground="gray",font=("Helvetica", 14, "bold"))
+        titulo = Label(self, text="Matricular Materia", foreground="black",font=("Helvetica", 14, "bold"))
         titulo.pack(side="top", anchor="c")
         texto = """En esta parte, debes seleccionar al estudiante deseado de dos formas:
 1. Búsqueda manual: Ingresa el ID y nombre del estudiante.
@@ -141,8 +141,8 @@ class MatricularMateria2(Frame):
         self.ventana=ventana
         self.estudiante=estudiante
         self.pack(expand=True)
-        self.config(highlightbackground="#085870",highlightthickness=3)
-        titulo = Label(self, text="Matricular Materia 2", foreground="#085870",font=("Helvetica", 14, "bold"))
+        self.config(highlightbackground="gray",highlightthickness=3)
+        titulo = Label(self, text="Matricular Materia 2", foreground="black",font=("Helvetica", 14, "bold"))
         titulo.pack(side="top", anchor="c")
         texto = """En esta parte, debes seleccionar la materia deseada de dos formas:
 1. Búsqueda manual: Ingresa el código y nombre de la materia.
@@ -267,9 +267,9 @@ class MatricularMateria3(Frame):
         self.estudiante=estudiante
         self.materia=materia
         self.pack(expand=True)
-        self.config(highlightbackground="#085870",highlightthickness=3)
+        self.config(highlightbackground="white",highlightthickness=3)
 
-        titulo = Label(self, text="Matricular Materia 3", foreground="#085870",font=("Helvetica", 14, "bold"))
+        titulo = Label(self, text="Matricular Materia 3", foreground="black",font=("Helvetica", 14, "bold"))
         titulo.pack(side="top", anchor="c")
         texto = """En esta parte, debes seleccionar el grupo deseado mediante una lista de los disponibles:"""
         seleccionados="Estudiante: "+self.estudiante.getNombre()+"\nMateria: "+self.materia.getNombre()
@@ -355,9 +355,9 @@ class MatricularMateria4(Frame):
         self.ventana=ventana
         self.estudiante=estudiante
         self.pack(expand=True)
-        self.config(highlightbackground="#085870",highlightthickness=3)
+        self.config(highlightbackground="white",highlightthickness=3)
 
-        titulo = Label(self, text="Mostrar horario estudiante", foreground="#085870",font=("Helvetica", 14, "bold"))
+        titulo = Label(self, text="Mostrar horario estudiante", foreground="black",font=("Helvetica", 14, "bold"))
         titulo.pack(side="top", anchor="c")
         seleccionado="Estudiante seleccionado: "+self.estudiante.getNombre()
         seleccion=Label(self, text=seleccionado, font=("Arial", 11,"bold"),)
@@ -373,7 +373,7 @@ class MatricularMateria4(Frame):
         horarioText.pack(side="top",fill="x")
         horarioText.insert(1.0,horario)
 
-        boton = Button(caja, text="Regresar",foreground="white",background="#085870",font=("Helvetica", 12), command=self.regresar)
+        boton = Button(caja, text="Regresar",foreground="white",background="black",font=("Helvetica", 12), command=self.regresar)
         boton.pack(pady=10)
 
 

@@ -91,11 +91,17 @@ Estamos comprometidos con brindarte una experiencia fácil de usar y confiable. 
         menu2 = Menu(menuBar)
         menuBar.add_cascade(label="Procesos y Consultas", menu=menu2)
 
-        menu2.add_cascade(label="Matricular materia", command=matricularMateria)
-        menu2.add_cascade(label="Generar Horario", command=generarHorario)
-        menu2.add_cascade(label="Eliminar o agregar Materia / Grupo", command=eliminarAgregarMateria)
-        menu2.add_cascade(label="Desmatricular Alumno", command=desmatricularAlumno)
-        menu2.add_cascade(label="Busqueda y Postulacion de Becas", command=becas)
+        menu2.add_command(label="Matricular materia", command=matricularMateria)
+        menu2.add_command(label="Generar Horario", command=generarHorario)
+        menu2.add_command(label="Eliminar o agregar Materia / Grupo", command=eliminarAgregarMateria)
+        menu2.add_command(label="Desmatricular Alumno", command=desmatricularAlumno)
+        menu2.add_command(label="Busqueda y Postulacion de Becas", command=becas)
+
+        #menu2.add_cascade(label="Matricular materia", command=matricularMateria)
+        #menu2.add_cascade(label="Generar Horario", command=generarHorario)
+        #menu2.add_cascade(label="Eliminar o agregar Materia / Grupo", command=eliminarAgregarMateria)
+        #menu2.add_cascade(label="Desmatricular Alumno", command=desmatricularAlumno)
+        #menu2.add_cascade(label="Busqueda y Postulacion de Becas", command=becas)
 
         menu3 = Menu(menuBar)
         menuBar.add_cascade(label="Ayuda", menu=menu3)

@@ -12,7 +12,7 @@ from excepciones.ErrorManejo import *
 class DesmatricularAlumno(Frame):
     def __init__(self,ventana):
         super().__init__(ventana)
-        self.config(highlightbackground="#085870",highlightthickness=3)
+        self.config(highlightbackground="white",highlightthickness=3)
         self.pack(expand=True)
 
         def listaEstudiantes():
@@ -23,25 +23,25 @@ class DesmatricularAlumno(Frame):
             self.pack_forget()
             AlumnoPorBusqueda(ventana)
         
-        titulo = Label(self, text="Desmatricular Alumno", font=("Arial", 14), fg="white", bg="#085870")
+        titulo = Label(self, text="Desmatricular Alumno", font=("Arial", 14), fg="white", bg="black")
         titulo.pack(side="top", anchor="c", padx=5, pady=5)
 
         textDescripcion = ("Esta funcionalidad permite:\n1. Desmatricular a un estudiante del grupo " +
                            "y/o materia que usted desee.\n2. Desmatricular estudiante del sistema.")
 
-        descripcion = Button(self, text=textDescripcion, font=("Arial", 10), fg="white", bg="#085870")
+        descripcion = Button(self, text=textDescripcion, font=("Arial", 10), fg="white", bg="black")
         descripcion.pack(anchor="n", pady=20)
 
-        frame = Frame(self, bg="#cedae0")
+        frame = Frame(self, bg="black")
         frame.pack(padx=5, pady=5)
 
-        nombre = Label(frame, text="Elija como quiere seleccionar el alumno", font=("Arial", 14), fg="white", bg="#085870")
+        nombre = Label(frame, text="Elija como quiere seleccionar el alumno", font=("Arial", 14), fg="white", bg="black")
         nombre.pack(side="top", anchor="n", pady=20)
 
-        opcion1 = Button(frame, text="Ver la lista de estudiantes", font=("Arial", 10), fg="white", bg="#085870", command=listaEstudiantes)
+        opcion1 = Button(frame, text="Ver la lista de estudiantes", font=("Arial", 10), fg="white", bg="black", command=listaEstudiantes)
         opcion1.pack(side="left", pady=20, padx=10)
 
-        opcion2 = Button(frame, text="Buscar estudiante por ID (Documento) y nombre", font=("Arial", 10), fg="white", bg="#085870", command=buscarEstudiante)
+        opcion2 = Button(frame, text="Buscar estudiante por ID (Documento) y nombre", font=("Arial", 10), fg="white", bg="black", command=buscarEstudiante)
         opcion2.pack(side="right", pady=20, padx=10)
 
 
@@ -107,7 +107,7 @@ class AlumnoPorLista(Frame):
                 infoMateria += "Numero: " + str(grupo.getNumero()) + "\n"
                 infoMateria += "Profesor: " + grupo.getProfesor().getNombre()
                 
-                self._materiaSeleccionada = Label(der, text=infoMateria, font=("Arial", 10),bg="#085870")
+                self._materiaSeleccionada = Label(der, text=infoMateria, font=("Arial", 10),bg="black")
                 self._materiaSeleccionada.pack(anchor="c", padx=10, pady=10)
 
         def eleccionEstudiante(event):
@@ -115,7 +115,7 @@ class AlumnoPorLista(Frame):
             est = combo.get()
             if self._estudianteSeleccionado is not None:
                 self._estudianteSeleccionado.destroy()
-            self._estudianteSeleccionado = Label(izq, text="Estudiante seleccionado:\n" + est, font=("Arial", 12), bg="#cedae0")
+            self._estudianteSeleccionado = Label(izq, text="Estudiante seleccionado:\n" + est, font=("Arial", 12), bg="gray")
             self._estudianteSeleccionado.pack(anchor="c", padx=10, pady=10)
 
         def nombresAlumnos(estudiantes):
@@ -167,7 +167,7 @@ class AlumnoPorLista(Frame):
 
             combo.config(state="disabled")
 
-            titulo2 = Label(der, text="Desmatricular de Materia", font=("Arial", 14), bg="#085870")
+            titulo2 = Label(der, text="Desmatricular de Materia", font=("Arial", 14), bg="gray")
             titulo2.pack(side="top", anchor="center", padx=10, pady=10)
 
             descripcionMayor = Label(der, text="Selecciona la materia de la que quiere desmatricular al alumno", font=("Arial", 12))
@@ -189,7 +189,7 @@ class AlumnoPorLista(Frame):
             comboMaterias.bind("<<ComboboxSelected>>", seleccionMateria)
             comboMaterias.pack(side="top", fill="x", pady="20", padx="25", anchor="c")
 
-            botonDesmatricular = Button(der, text="Desmatricular", font=("Arial", 10), command=desmatricularGrupo, bg="#085870", fg="white")
+            botonDesmatricular = Button(der, text="Desmatricular", font=("Arial", 10), command=desmatricularGrupo, bg="black", fg="white")
             botonDesmatricular.pack(side="bottom", anchor="center", pady=10)
 
         def retroceder():
@@ -197,14 +197,14 @@ class AlumnoPorLista(Frame):
             der.destroy()
             DesmatricularAlumno(ventana)
 
-        izq=Frame(ventana, height=460,width=250, bg="#085870")
+        izq=Frame(ventana, height=460,width=250, bg="gray")
         izq.pack(side="left", anchor="e")
         izq.pack_propagate(False)
 
-        atras = Button(izq, text="Atras", font=("Arial", 10), bg="#cedae0", fg="#085870", command=retroceder)
+        atras = Button(izq, text="Atras", font=("Arial", 10), bg="gray", fg="black", command=retroceder)
         atras.pack(side="bottom", anchor="center", padx=10, pady=10)
 
-        desc = Label(izq, text="Elija al estudiante", font=("Arial", 14), bg="#cedae0")
+        desc = Label(izq, text="Elija al estudiante", font=("Arial", 14), bg="gray")
         desc.pack(side="top", anchor="c", padx=10, pady=10)
 
         nombresEstudiantes = nombresAlumnos(Estudiante.getEstudiantes())
@@ -213,25 +213,25 @@ class AlumnoPorLista(Frame):
         combo.bind("<<ComboboxSelected>>", eleccionEstudiante)
         combo.pack(fill="x", pady="20", padx="25") 
 
-        der=Frame(ventana, height=460,width=615, bg="#cedae0")
+        der=Frame(ventana, height=460,width=615, bg="gray")
         der.pack(side="right", fill="both")
         der.pack_propagate(False)
 
-        subFrame = Frame(der, highlightbackground="#085870", highlightthickness=3)
+        subFrame = Frame(der, highlightbackground="gray", highlightthickness=3)
         subFrame.pack(padx=5, pady=5, expand=True)
 
-        titulo = Label(subFrame, text="Desmatricular Alumno", font=("Arial", 14), fg="white", bg="#085870")
+        titulo = Label(subFrame, text="Desmatricular Alumno", font=("Arial", 14), fg="white", bg="black")
         titulo.pack(side="top", anchor="center", pady=10, padx=5)
 
         text = "Seleccione de que quiere desmatricular al estudiante"
 
-        descripcion = Label(subFrame, text=text, font=("Arial", 10), fg="white", bg="#085870")
+        descripcion = Label(subFrame, text=text, font=("Arial", 10), fg="white", bg="black")
         descripcion.pack(pady=10, padx=5)
 
-        desmatricular1 = Button(subFrame, text="Desmatricular del sistema", font=("Arial", 10), fg="white", bg="#085870", command=desmatricularDelSistema)
+        desmatricular1 = Button(subFrame, text="Desmatricular del sistema", font=("Arial", 10), fg="white", bg="black", command=desmatricularDelSistema)
         desmatricular1.pack(pady=20, padx=5)
 
-        desmatricular2 = Button(subFrame, text="Desmatricular de una materia", font=("Arial", 10), fg="white", bg="#085870", command=desmatricularMateria)
+        desmatricular2 = Button(subFrame, text="Desmatricular de una materia", font=("Arial", 10), fg="white", bg="black", command=desmatricularMateria)
         desmatricular2.pack(pady=20, padx=5)
 
 class AlumnoPorBusqueda(Frame):

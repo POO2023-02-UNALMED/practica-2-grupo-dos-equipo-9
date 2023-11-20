@@ -134,7 +134,7 @@ class VentInicio(Frame):
         
         # Texto descripcion
         
-        descripTexto = Label(p4Frame,text="",font=("arial", 10, "bold"),bg="black",wraplength=400)
+        descripTexto = Label(p4Frame,text="",font=("arial", 10, "bold"),bg="gray",wraplength=400)
         descripTexto.pack(side="top",fill="x",pady=10)
         
         # Boton para pasar
@@ -156,6 +156,6 @@ class VentInicio(Frame):
         ventana.menuBar.add_cascade(label="Archivo", menu=menu1)
         menu1.add_command(label="Salir", command=lambda: ventana.destroy())
         
-        textDescrip="SMM es un sistema de gestión académica diseñado para mejorar la administración de asignaturas en instituciones educativas. Está dirigido exclusivamente a coordinadores académicos y tiene como objetivo optimizar los procesos relacionados con la gestión académica."
+        textDescrip="SDIAcademica Y&R consiste en un sistema de información académica diseñado para mejorar la administración de asignaturas en instituciones educativas. En esencia, está dirigido a los coordinadores de las diferentes instituciones."
         menu1.add_command(label="Descripcion",command=lambda: descripTexto.config(text=textDescrip))
         

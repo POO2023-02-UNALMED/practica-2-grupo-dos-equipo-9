@@ -29,9 +29,9 @@ class Horario:
             self._grupoContenidos.append(grupo)
             for hora in range(horaInicio, horaFinal):
                 self._horario[diaSemana][hora] = grupo
-    
+
     def ocuparHorario(self, grupo, horario=None) -> None:
-        if horario is None:
+        if horario == None:
             horario = grupo.getHorario()
         self._grupoContenidos.append(grupo)
         for clase in horario:
@@ -49,18 +49,21 @@ class Horario:
             for hora in range(horaInicio, horaFinal):
                 grupoEliminado = self._horario[dia][hora]
                 self._horario[dia][hora] = None
-            
+      
             for pGrupo in self._grupoContenidos:
-                if not isinstance(pGrupo, str) and pGrupo.getNumero() == grupoEliminado.getNumero() and pGrupo.getMateria().getNombre() == grupoEliminado.getMateria().getNombre():
-                    self._grupoContenidos.remove(pGrupo)    
-
+                if not isinstance(pGrupo,str):
+                    if pGrupo.getNumero() == grupoEliminado.getNumero():
+                        if pGrupo.getMateria().getNombre()==grupoEliminado.getMateria().getNombre():
+                            self._grupoContenidos.remove(pGrupo)    
 
     def vaciarHorario(self, grupos) -> None:
         for grupo in grupos:
             self.liberarHorario(grupo.getHorario())
 
     def comprobarDisponibilidadUna(self, clase) -> bool:
-        dia = int(clase[0]) - 1
+        # print("esto es: "+str(clase))
+        # clase = clase[0]
+        dia = int(clase[0])-1
         horaInicio = int(clase[2:4])
         horaFinal = int(clase[5:7])
         for hora in range(horaInicio, horaFinal):
@@ -102,7 +105,7 @@ class Horario:
         return horario
     
     def mostrarHorario2(self) -> str:
-        
+        # Si el dos, y este si es bueno, porque tiene mano de efrain >:O 
         horario = "HORA        LUNES        MARTES        MIERCOLES        JUEVES        VIERNES        SABADO        DOMINGO\n"
 
         for i in range(6,24):

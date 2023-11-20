@@ -1,12 +1,21 @@
 from gestorAplicacion.administracion.Grupo import Grupo
 from excepciones.ErrorManejo import *
-
+# from Salon import Salon
 
 
 class Materia:
     materiasTotales = []
 
-    def __init__(self,nombre,codigo,descripcion,creditos,facultad,prerrequisitos=None,grupos=None,):
+    def __init__(
+        self,
+        nombre,
+        codigo,
+        descripcion,
+        creditos,
+        facultad,
+        prerrequisitos=None,
+        grupos=None,
+    ):
         self.nombre = nombre
         self.codigo = codigo
         self.descripcion = descripcion
@@ -100,7 +109,8 @@ class Materia:
             retorno.append(materia.getNombre())
         return retorno
 
- # MÉTODOS DE INSTANCIA
+
+    # MÉTODOS DE INSTANCIA
 
     def cantidadCupos(self):
         cantidad = 0
@@ -214,7 +224,8 @@ class Materia:
             cupos+=i.getCupos()
             
         return cupos
-  # GETTERS Y SETTERS
+
+    # GETTERS Y SETTERS
 
     @classmethod
     def getMateriasTotales(cls):

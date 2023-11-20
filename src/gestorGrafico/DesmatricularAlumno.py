@@ -389,14 +389,14 @@ class AlumnoPorBusqueda(Frame):
             DesmatricularAlumno(ventana)
 
 
-        izq=Frame(ventana, height=460,width=250, bg="#085870")
+        izq = Frame(ventana, height=460, width=250, bg="black")  # Cambio del fondo a negro
         izq.pack(side="left", anchor="e")
         izq.pack_propagate(False)
 
-        atras = Button(izq, text="Atras", font=("Arial", 10), bg="#cedae0", fg="#085870", command=retroceder)
+        atras = Button(izq, text="Atras", font=("Arial", 10), bg="#808080", fg="black", command=retroceder)  # Cambio del color del botón a gris y texto a negro
         atras.pack(side="bottom", anchor="center", padx=10, pady=10)
 
-        der=Frame(ventana, height=460,width=615, bg="#cedae0")
+        der = Frame(ventana, height=460, width=615, bg="#808080")  # Cambio del fondo a gris claro
         der.pack(side="right", fill="both")
         der.pack_propagate(False)
 
@@ -407,26 +407,26 @@ class AlumnoPorBusqueda(Frame):
         frame = Frame(izq)
         frame.pack(fill="x")
 
-        acept = Button(frame, text="Buscar", font=("Arial", 10), fg="white", bg="#085870", command=buscarEstudiante)
+        acept = Button(frame, text="Buscar", font=("Arial", 10), fg="white", bg="black", command=buscarEstudiante)  # Cambio del color del botón a negro y texto a blanco
         acept.pack(side="left", anchor="ne", padx=10, pady=10)
 
-        borrar = Button(frame, text="Borrar", font=("Arial", 10), fg="white", bg="#085870", command=limpiar)
+        borrar = Button(frame, text="Borrar", font=("Arial", 10), fg="white", bg="black", command=limpiar)  # Cambio del color del botón a negro y texto a blanco
         borrar.pack(side="right", anchor="nw", padx=10, pady=10)
 
-        subFrame = Frame(der, highlightbackground="#085870", highlightthickness=3)
+        subFrame = Frame(der, highlightbackground="black", highlightthickness=3)  # Cambio del borde a negro
         subFrame.pack(padx=5, pady=5, expand=True)
 
-        titulo = Label(subFrame, text="Desmatricular Alumno", font=("Arial", 14), fg="white", bg="#085870",)
+        titulo = Label(subFrame, text="Desmatricular Alumno", font=("Arial", 14), fg="white", bg="black")  # Cambio del color del texto a blanco y fondo a negro
         titulo.pack(side="top", anchor="center", pady=10, padx=5)
 
-        text = "Seleccione de que quiere desmatricular al estudiante"
+        text = "Seleccione de qué quiere desmatricular al estudiante"
 
-        descripcion = Label(subFrame, text=text, font=("Arial", 10), fg="white", bg="#085870")
+        descripcion = Label(subFrame, text=text, font=("Arial", 10), fg="white", bg="black")  # Cambio del color del texto a blanco y fondo a negro
         descripcion.pack(pady=10, padx=5)
 
-        desmatricular1 = Button(subFrame, text="Desmatricular del sistema", font=("Arial", 10), fg="white", bg="#085870", command=desmatricularDelSistema)
+        desmatricular1 = Button(subFrame, text="Desmatricular del sistema", font=("Arial", 10), fg="white", bg="black", command=desmatricularDelSistema)  # Cambio del color del botón a negro y texto a blanco
         desmatricular1.pack(pady=20, padx=5)
 
-        desmatricular2 = Button(subFrame, text="Desmatricular de una materia", font=("Arial", 10), fg="white", bg="#085870", command=desmatricularMateria)
+        desmatricular2 = Button(subFrame, text="Desmatricular de una materia", font=("Arial", 10), fg="white", bg="black", command=desmatricularMateria)  # Cambio del color del botón a negro y texto a blanco
         desmatricular2.pack(pady=20, padx=5)
         

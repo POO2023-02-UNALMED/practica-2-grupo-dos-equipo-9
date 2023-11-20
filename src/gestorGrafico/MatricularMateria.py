@@ -141,28 +141,28 @@ class MatricularMateria2(Frame):
         self.ventana=ventana
         self.estudiante=estudiante
         self.pack(expand=True)
-        self.config(highlightbackground="gray",highlightthickness=3)
-        titulo = Label(self, text="Matricular Materia 2", foreground="black",font=("Helvetica", 14, "bold"))
+        self.config(highlightbackground="gray", highlightthickness=3, bg="gray")
+        titulo = Label(self, text="Matricular Materia 2", foreground="white", font=("Helvetica", 14, "bold"), bg="gray")  # Cambio del color del texto a blanco y fondo a gris
         titulo.pack(side="top", anchor="c")
         texto = """En esta parte, debes seleccionar la materia deseada de dos formas:
 1. Búsqueda manual: Ingresa el código y nombre de la materia.
 2. Búsqueda por lista: Selecciona una materia de una lista disponible."""
         seleccionados="Estudiante: "+self.estudiante.getNombre()
-        seleccion=Label(self, text=seleccionados, font=("Arial", 11,"bold"))
+        seleccion = Label(self, text=seleccionados, font=("Arial", 11, "bold"), bg="gray", fg="black")  # Cambio del color del texto a blanco y fondo a gris
         seleccion.pack(anchor="n", pady=5)
-        descripcion = Label(self, text=texto, font=("Arial", 11))
+        descripcion = Label(self, text=texto, font=("Arial", 11), bg="gray", fg="white")  # Cambio del color del texto a blanco y fondo a gris
         descripcion.pack(anchor="n", pady=5)
-        opciones = Frame(self)
+        opciones = Frame(self, bg="gray")
         opciones.pack()
-        manual = Button(opciones,text="Seleccionar la materia\n de forma manual",foreground="white",background="#085870",font=("Helvetica", 12),command=lambda: self.seleccionar_materia(caja, label_vacio, False))
-        lista = Button(opciones,text="Seleccionar la materia\n mediante una lista",foreground="white",background="#085870",font=("Helvetica", 12),command=lambda: self.seleccionar_materia(caja, label_vacio, True))
+        manual = Button(opciones,text="Seleccionar la materia\n de forma manual",foreground="white",background="black",font=("Helvetica", 12),command=lambda: self.seleccionar_materia(caja, label_vacio, False))
+        lista = Button(opciones,text="Seleccionar la materia\n mediante una lista",foreground="white",background="black",font=("Helvetica", 12),command=lambda: self.seleccionar_materia(caja, label_vacio, True))
         manual.pack(side=LEFT, padx=(0, 10))
         lista.pack(side=LEFT, padx=(10, 10))
-        busqueda = Frame(self)
+        busqueda = Frame(self, bg="gray")
         busqueda.pack()
-        label_vacio = Label(busqueda, text="",font=("Arial", 11))
+        label_vacio = Label(busqueda, text="",font=("Arial", 11),bg="gray", fg="white")
         label_vacio.pack(pady=(10, 10))
-        caja = Frame(self)
+        caja = Frame(self, bg = "gray")
         caja.pack()
 
 

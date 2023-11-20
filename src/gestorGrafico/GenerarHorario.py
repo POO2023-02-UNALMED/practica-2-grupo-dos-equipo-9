@@ -13,11 +13,11 @@ class GenerarHorario(Frame):
         super().__init__(ventana)
         self.pack()
         # self.pack_propagate(False)
-        self.config(bg="#cedae0",highlightbackground="#085870",highlightthickness=5)
+        self.config(bg="black", highlightbackground="grey", highlightthickness=5)
         
         
 
-        titulo = Label(self, text="Generar Horario", font=("Arial", 14,"bold"),fg="#cedae0",bg="#085870",wraplength=410,highlightbackground="#085870",highlightthickness=2)
+        titulo = Label(self, text="Generar Horario", font=("Arial", 14, "bold"), fg="black", bg="grey", wraplength=410, highlightbackground="grey", highlightthickness=2)
         titulo.pack(side="top",padx=5,pady=10)
 
         texto = "Esta opcion le permitira generar un horario en base a unas materias seleccionadas, para luego poder asignarselo a algun estudiante o descartarlo"
@@ -30,17 +30,17 @@ class RecoleccionDat(Frame):
     def __init__(self,ventana):
             super().__init__(ventana)
             self.pack()
-            self.config(bg="#cedae0")
+            self.config(bg="black")
        
-            FrameCont = Frame(self,bg="#cedae0",width=855,height=380)
+            FrameCont = Frame(self, bg="black", width=855, height=380)
             FrameCont.pack(side="top",padx=5,pady=5)
             FrameCont.grid_propagate(False)
             
-            MidIzq=Frame(FrameCont,height=340,width=268,bg="#085870")
+            MidIzq = Frame(FrameCont, height=340, width=268, bg="grey")
             MidIzq.grid(row=0,column=0,padx=5,pady=5)
             MidIzq.pack_propagate(False)
             
-            MidDer=Frame(FrameCont,height=340,width=568,bg="#cedae0")
+            MidDer = Frame(FrameCont, height=340, width=568, bg="black")
             MidDer.grid(row=0,column=1,padx=5,pady=5)
             MidDer.pack_propagate(False)
             
@@ -129,7 +129,7 @@ class RecoleccionDat(Frame):
             materiasText.pack(side="top",pady=10,padx=10)
             materiasText.insert(1.0,("%-3s %-40s %-10s %-10s" % ("Num", "Nombre", "Facultad", "Codigo"))+"\n")
             
-            fraBotones=Frame(MidDer,bg="#085870")
+            fraBotones=Frame(MidDer,bg="gray")
             fraBotones.pack(side="top",padx=10,pady=10)
             
             def eliminarUltima():
@@ -155,13 +155,13 @@ class RecoleccionDat(Frame):
                 else:
                     messagebox.showinfo("Vacio","No hay nada que generar :/")
                 
-            bottEliminarUltima = Button(fraBotones,text="Eliminar Ultima",command=eliminarUltima,bg="#cedae0",font=("arial",11),fg="#085870")
+            bottEliminarUltima = Button(fraBotones,text="Eliminar Ultima",command=eliminarUltima,bg="black",font=("arial",11),fg="white")
             bottEliminarUltima.pack(side="left",padx=10,pady=10)
             
-            bottLimpiar = Button(fraBotones,text="Eliminar todas",command=eliminarTodas,bg="#cedae0",font=("arial",11),fg="#085870")
+            bottLimpiar = Button(fraBotones,text="Eliminar todas",command=eliminarTodas,bg="black",font=("arial",11),fg="white")
             bottLimpiar.pack(side="left",padx=10,pady=10)
         
-            bottGenerar = Button(fraBotones,text="Generar",command=generar,bg="#cedae0",font=("arial",11),fg="#085870")
+            bottGenerar = Button(fraBotones,text="Generar",command=generar,bg="black",font=("arial",11),fg="white")
             bottGenerar.pack(side="left",padx=10,pady=10)
             
             
@@ -220,7 +220,7 @@ class horarioGenerado(Frame):
         super().__init__(ventana)
         self.pack()
 
-        FrameCont2 = Frame(self,bg="#085870",width=855,height=310)
+        FrameCont2 = Frame(self, bg="grey", width=855, height=310)
         FrameCont2.pack(side="top",padx=5,pady=(5,0))
         FrameCont2.pack_propagate(False)
         
@@ -231,7 +231,7 @@ class horarioGenerado(Frame):
         horarioText.insert(1.0,horario)
         
         
-        fraBotones=Frame(self,bg="#085870",height=60)
+        fraBotones = Frame(self, bg="grey", height=60)
         fraBotones.pack(side="top",fill="both",padx=0,pady=(5,0))
         fraBotones.pack_propagate(False)
         
@@ -292,16 +292,16 @@ class horarioGenerado(Frame):
 
             
         
-        bottDescartar = Button(fraBotones,text="Descartar",command=descartar,bg="#cedae0",font=("arial",11),fg="#085870")
+        bottDescartar = Button(fraBotones, text="Descartar", command=descartar, bg="black", font=("arial", 11), fg="grey")
         bottDescartar.pack(side="left",padx=10,pady=(3,1))        
 
-        bottConservar = Button(fraBotones,text="Asignar",command=asignar,bg="#cedae0",font=("arial",11),fg="#085870")
+        bottConservar = Button(fraBotones, text="Asignar", command=asignar, bg="black", font=("arial", 11), fg="grey")
         bottConservar.pack(side="right",padx=10,pady=(3,1))
 
         combo3 = ttk.Combobox(fraBotones, textvariable=StringVar(value="Estudiantes habilitados"), values=listaNombresEstu, state="readonly")
         combo3.pack(side="right", fill="x", pady="1", padx=(3,1))
         
-        textAsig = Label(fraBotones,text="Conservar y asignar a: ",bg="#cedae0",font=("arial",11),fg="#085870")
+        textAsig = Label(fraBotones, text="Conservar y asignar a: ", bg="black", font=("arial", 11), fg="grey")
         textAsig.pack(side="right",padx=10,pady=1)
 
     @classmethod

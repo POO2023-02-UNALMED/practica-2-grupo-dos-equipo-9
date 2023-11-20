@@ -11,7 +11,7 @@ from excepciones.ObjetoInexistente import *
 class agregarGrupo(Frame):
     def __init__(self, ventana):
         super().__init__(ventana)
-        self.config(highlightbackground="#085870",highlightthickness=3)
+        self.config(highlightbackground="black",highlightthickness=3)
         self.pack(expand=True)
 
         def limpiar1():

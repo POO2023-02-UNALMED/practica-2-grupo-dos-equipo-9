@@ -53,10 +53,10 @@ class VentInicio(Frame):
             
             # Cambio de imagenes
             
-            imag1=PhotoImage(file=f"/home/rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgIn{i+1}_1.png")     
-            imag2=PhotoImage(file=f"/home/rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgIn{i+1}_2.png")     
-            imag3=PhotoImage(file=f"/home/rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgIn{i+1}_3.png")     
-            imag4=PhotoImage(file=f"/home/rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgIn{i+1}_4.png")     
+            imag1=PhotoImage(file=f"/home/Rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgIn{i+1}_1.png")     
+            imag2=PhotoImage(file=f"/home/Rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgIn{i+1}_2.png")     
+            imag3=PhotoImage(file=f"/home/Rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgIn{i+1}_3.png")     
+            imag4=PhotoImage(file=f"/home/Rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgIn{i+1}_4.png")     
             
             global lisImagenes # Es global para no perder el puntero de las imagenes cuando el metodo finalice
             lisImagenes=[imag1,imag2,imag3,imag4]
@@ -86,10 +86,10 @@ class VentInicio(Frame):
 
         tam=157
 
-        self.image1 =PhotoImage(file="/home/rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgIn1_1.png")
-        self.image2 =PhotoImage(file="/home/rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgIn1_2.png")
-        self.image3 =PhotoImage(file="/home/rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgIn1_3.png")
-        self.image4 =PhotoImage(file="/home/rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgIn1_4.png")
+        self.image1 =PhotoImage(file="/home/Rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgIn1_1.png")
+        self.image2 =PhotoImage(file="/home/Rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgIn1_2.png")
+        self.image3 =PhotoImage(file="/home/Rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgIn1_3.png")
+        self.image4 =PhotoImage(file="/home/Rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgIn1_4.png")
 
 
         img1 = Label(p6Frame,image=self.image1,height=tam,width=tam)
@@ -114,7 +114,7 @@ class VentInicio(Frame):
 
             # Cambio de imagenes
             global imagF4
-            imagF4=PhotoImage(file=f"/home/rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgInF4.{i}.png")     
+            imagF4=PhotoImage(file=f"/home/Rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgInF4.{i}.png")     
    
             ImagenF4.config(image=imagF4)
             
@@ -126,7 +126,7 @@ class VentInicio(Frame):
             else:
                 self.punteroImagen=i
         
-        self.imagenF41 =PhotoImage(file="/home/rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgInF4.1.png")
+        self.imagenF41 =PhotoImage(file="/home/Rick/GitHub/practica-2-grupo-dos-equipo-9/src/gestorGrafico/Imagenes/imgInF4.1.png")
         
         ImagenF4 = Label(p4Frame,image=self.imagenF41,width=300,wraplength=160,highlightbackground="black",highlightthickness=4)
         ImagenF4.pack(side="top",pady=3)

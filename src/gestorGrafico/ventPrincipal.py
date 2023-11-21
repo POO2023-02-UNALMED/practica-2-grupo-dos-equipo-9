@@ -20,19 +20,17 @@ class VentPrincipal(Tk):
         def infoBasica():
             texto = """Bienvenido a nuestra aplicación de Matrícula de Materias.
 
-Nuestra aplicación te permite gestionar de manera eficiente y sencilla el proceso de matrícula de materias en tu institución educativa. Con nuestra aplicación, podrás realizar las siguientes acciones:
+SDIAcademico Y&R te permite gestionar de manera eficiente y sencilla los procesos en tu institución educativa. En esta se puede realizar:
 
-1. Matricular materia: Selecciona al estudiante la materias que desea cursar en el próximo período académico y confirma su inscripción.
+1. Matricular materias: Selecciona al estudiante y las materias que desea cursar en el próximo período académico.
 
-2. Generar horario: Crea automáticamente un horario de clases basado en las materias que selecciones al estudiante, teniendo en cuenta los horarios disponibles y las restricciones establecidas.
+2. Generar horario: Crea automáticamente un horario de clases basado en las materias que selecciones al estudiante (De acuerdo a las restricciones).
 
 3. Agregar o eliminar materia/grupo: Realiza cambios en la base de datos de materias, ya sea para agregar nuevas materias o eliminar aquellas que ya no deseas que esten en el sistema.
 
 4. Desmatricular alumno: En caso de que necesites cancelar una matrícula en su totalidad, puedes utilizar esta opción para desmatricular de todas las materias inscritas.
 
 5. Búsqueda y postulación de becas: Explora las becas disponibles y postula estudiantes que cumplan con sus requisitos y objetivos académicos.
-
-Estamos comprometidos con brindarte una experiencia fácil de usar y confiable. Si tienes alguna pregunta o necesitas ayuda, no dudes en contactar a nuestro equipo de soporte técnico.
 
 ¡Esperamos que disfrutes de nuestra aplicación y tengas un exitoso período académico!
             """

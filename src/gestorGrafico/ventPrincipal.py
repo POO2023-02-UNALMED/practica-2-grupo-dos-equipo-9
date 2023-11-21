@@ -15,7 +15,7 @@ class VentPrincipal(Tk):
         self.geometry("865x480")
         self.configure(bg="black")
         self.pack_propagate(False)
-        self.iconphoto(True, PhotoImage(file="src\gestorGrafico\Imagenes\iconoRY.png"))
+        self.iconphoto(True, PhotoImage(file="src/gestorGrafico/Imagenes/iconoRY.png"))
 
         def infoBasica():
             texto = """Bienvenido a nuestra aplicación de Matrícula de Materias.
@@ -114,7 +114,7 @@ SDIAcademico Y&R te permite gestionar de manera eficiente y sencilla los proceso
         bienvenida_label.pack(padx=10, pady=10)
 
 
-        self.imagen = PhotoImage(file="src\gestorGrafico\Imagenes\imgVentPrincipal.png")
+        self.imagen = PhotoImage(file="src/gestorGrafico/Imagenes/imgVentPrincipal.png")
         figura = Label(frame,height=108,width=192,image=self.imagen)
         figura.pack(anchor="center")
 

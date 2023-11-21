@@ -39,8 +39,8 @@ class VentInicio(Frame):
 
         # Frame 5 Bibliografia de cada desarrollador
         bibi1="Mi nombre es Ricardo Lopera, soy estudiante de ciencias de la computacion y matematicas, me gusta acampar y el senderismo, disfruto del rap y el punk, y en mi tiempo libre me gusta tomar cerveza"
-        bibi2="fadkfñadslksadjñfldskajf"
-        #yiduar ponga  la biografia o esa cosa jajaja
+        bibi2="Mi nombre es Yiduar Duvier Rangel Quintero. Soy estudiante de Ingeniería de Sistemas en la UNALMED. Me encantan los raspados y las salchipapas. En mi tiempo libre, disfruto explorar Colombia y pasar tiempo con mis amigos."
+        
          
         self.biblios = [bibi1,bibi2]
 
